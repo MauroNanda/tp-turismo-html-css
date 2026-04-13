@@ -3,20 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo | Inicio</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <title>Turismo | Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="home-page">
     <header>
-        </header>
-
+       <!-- <h1>Turismo</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="agencias.html">Agencias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        Prototipo de Header-->
+    </header>
     <main>
-        <h1>Bienvenido al sitio de Turismo</h1>
-        </main>
+        <section class="Hero">
+            <h2>Bienvenido a Turismo</h2>
+            <p>Descubre los mejores destinos, ofertas y consejos para tus próximas vacaciones.</p>
+            <!-- Para el Hero poner las imagenes de fondo con el texto puesto con css nomas dejo subida las dos imagenes en la carpeta image/index. preferentemente usar efecto carrousel para las imagenes aunque solo son 2 -->
+        </section>
 
+        <section id="beneficios-turismo">
+            <h2>¿Por qué elegir viajar con nosotros?</h2>
+            <p>Te ofrecemos la mejor experiencia en cada paso de tu aventura.</p>
+            <article class="tarjeta-beneficio">
+                <img src="images/index/transporte.jpeg" alt="Icono de seguridad">
+                <h3>Seguridad Garantizada</h3>
+                <p>Contamos con seguros de viaje integrales y asistencia las 24 horas.</p>
+            </article>
+
+            <article class="tarjeta-beneficio">
+                <img src="images/index/guia.jpeg" alt="Icono de guía">
+                <h3>Guías Expertos</h3>
+                <p>Nuestros guías locales conocen cada rincón y te llevarán a lugares exclusivos.</p>
+            </article>
+
+            <article class="tarjeta-beneficio">
+                <img src="images/index/precios.jpeg" alt="Icono de precio">
+                <h3>Precios Transparentes</h3>
+                <p>Sin cargos ocultos. El precio que ves es el precio final.</p>
+            </article>
+        <!-- La seccion de aca que sea vertical, separado en 3 cards de manera horizontal, le puse el mismo nombre de clase por que asi se trabaja por igual en los 3 articulos-->
+        </section>
+        <section id="testimonios">
+            <h2>Lo que dicen nuestros viajeros</h2>
+
+            <article class="comentario">
+                <p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p>
+                <cite>— Siomara Venicio</cite>
+            </article>
+
+            <article class="comentario">
+                <p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p>
+                <cite>— Gabriel Calisaya</cite>
+            </article>
+
+            <article class="comentario">
+                <p>"Precios super accesibles recomendadisimo!"</p>
+                <cite>— Sofia Verdeja</cite>
+            </article>
+
+            <article class="comentario">
+                <p>"Mi idea de viajar con amigos se complicaba por la otranizacion pero pudimos resolverlo gracias a ellos un 10/10 el servicio!."</p>
+                <cite>— Irene Quiroga</cite>
+            </article>
+            <article class="comentario">
+                <p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p>
+                <cite>— Mauro Nanda</cite>
+            </article>
+            <!-- Para esta seccion de comentarios de turistas, Preferentemente agregar estrellitas de puntuacion o algo similar -->
+        </section>
+        <section id="invitacion-blog">
+            <h2>Enterate de las últimas novedades</h2>
+            <p>En nuestro blog compartimos consejos, guías de viaje y las mejores anécdotas de nuestros exploradores.</p>
+    
+            <article class="preview-blog">
+                <img src="images/index/blog.jpeg" alt="Imagen miniatura del blog">
+                <h3>5 tips para armar tu valija como un experto</h3>
+                <p>No sufras más con el espacio. Te enseñamos a optimizar cada rincón de tu equipaje...</p>
+                <a href="blog.html">Leer más entradas en el blog</a>
+            </article>
+        <!-- Seccion de invitacion a leer nuestro blog agregar el estilo a gusto, preferentemente con un diseño Scroll Reveal o Fade-in on Scroll-->
+        </section>
+    </main>
     <footer>
-        </footer>
+        <p>&copy; 2026 Turismo. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

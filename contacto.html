@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo | Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="contacto-page">
+    <header>
+        <p>Pegar aqui el link del header cuando esté listo</p>
+    </header>
+
+    <main>
+        <section id="contacto-header">
+            <h2>Ponete en contacto con nosotros</h2>
+            <p>Dejanos tu consulta y un asesor te responderá a la brevedad.</p>
+            <!-- Centrado al medio y usar fuente generica contacto-->
+        </section>
+
+        <section id="formulario-seccion">
+            <form action="#" method="post">
+                
+                <div class="campo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="asunto">Asunto:</label>
+                    <select id="asunto" name="asunto">
+                        <option value="consulta">Consulta general</option>
+                        <option value="presupuesto">Pedido de presupuesto</option>
+                        <option value="queja">Reclamo</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+            <!-- Aqui el formulario ocupara el ancho de la pagina no del todo pero si jasjajs-->
+        </section>
+        <section id="datos-contacto">
+            <h3>Nuestra Oficina</h3>
+            <p>Calle Falsa 123, San Salvador de Jujuy, Jujuy, Argentina.</p>
+            <p>Teléfono: 0388 444-5555</p>
+            <h3>Horarios de atención</h3>
+            <ul>
+                <li><strong>Lunes a Viernes:</strong> 09:00 a 20:00 hs</li>
+                <li><strong>Sábados:</strong> 10:00 a 14:00 hs</li>
+                <li><strong>Domingos y Feriados:</strong> Cerrado</li>
+            </ul>
+            <aside class="publicidad-contacto">
+                <img src="images/index/publicidad.gif" alt="Publicidad">
+                <a href="precios.html">Ver promociones</a>
+                <!-- Pequeño sector de publicidad para rellenar un poco la seccion, quedará del lado derecho del Datos de contacto -->
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Turismo. Todos los derechos reservados.</p>
+    </footer>
+    </body>
+</html>
