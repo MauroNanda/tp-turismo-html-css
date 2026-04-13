@@ -1,113 +1,92 @@
-/* 1. Variables CSS (Requisito 55) */
+
 :root {
-    --color-primario: #1b5e20;    /* Verde bosque oscuro (Institucional) */
-    --color-acento: #4caf50;      /* Verde vibrante para interactividad */
-    --color-hover: rgba(76, 175, 80, 0.1); /* Verde muy suave para el hover */
-    --bg-tooltip: #263238;        /* Gris azulado muy oscuro para contraste */
-    --texto-blanco: #ffffff;
-    --sombra: 0 4px 15px rgba(0,0,0,0.1);
+    --verde-unju: #1b5e20;
+    --verde-claro: #4caf50;
+    --blanco: #ffffff;
+    --sombra: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* 2. Reset y Base */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* 3. Contenedor Principal (Box Model - Requisito 19) */
-.precios-container {
-    max-width: 1000px;
-    margin: 50px auto;
+.precios-page {
+    max-width: 1100px;
+    margin: 40px auto;
     padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-header {
+.intro-precios {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-/* 4. Tabla Responsiva (Requisito 34) */
 .tabla-wrapper {
-    overflow-x: auto; /* Permite scroll en móviles */
-    background: white;
-    border-radius: 12px;
+    overflow-x: auto;
+    background: var(--blanco);
+    border-radius: 15px;
     box-shadow: var(--sombra);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px; /* Asegura que no se colapse en móvil */
+    min-width: 800px;
 }
 
-/* Encabezados */
-thead th {
-    background-color: var(--color-primario);
-    color: var(--texto-blanco);
-    padding: 20px;
-    text-align: center;
+th {
+    background-color: var(--verde-unju);
+    color: var(--blanco);
+    padding: 20px 10px;
+    font-size: 0.95rem;
 }
 
-thead th:first-child {
-    text-align: left;
-}
-
-/* Celdas y Filas */
 td {
-    padding: 15px 20px;
+    padding: 18px 10px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
 }
 
-td:first-child {
-    text-align: left;
-    font-weight: 600;
+.fila-precio {
+    transition: background-color 0.2s ease;
 }
 
-/* 5. Efecto de Resaltado (Requisito 47) */
-tbody tr {
-    transition: background-color 0.3s ease; /* Micro-interacción */
+.fila-precio:hover {
+    background-color: #f1f8e9;
+    cursor: default;
+    font-weight: bold;
+    color: var(--verde-unju)
 }
 
-tbody tr:hover {
-    background-color: var(--color-hover);
-}
-
-/* 6. Tooltips Explicativos (Requisito 48) */
+/* TOOLTIPS */
 .tooltip-container {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--verde-claro);
+    color: white;
     width: 18px;
     height: 18px;
-    background-color: var(--color-acento);
-    color: white;
+    display: inline-block;
     border-radius: 50%;
-    font-size: 12px;
+    text-align: center;
+    font-size: 11px;
     cursor: help;
-    margin-left: 8px;
     position: relative;
+    margin-left: 5px;
+    line-height: 18px;
 }
 
 .tooltip-container::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 150%;
+    bottom: 140%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--bg-tooltip);
+    background: #333;
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
-    font-size: 13px;
-    white-space: nowrap;
+    width: 180px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: var(--sombra);
-    z-index: 10;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
 .tooltip-container:hover::after {
@@ -115,15 +94,9 @@ tbody tr:hover {
     visibility: visible;
 }
 
-/* 7. Accesibilidad: Focus Visible (Requisito 66) */
-.tooltip-container:focus {
-    outline: 3px solid var(--color-acento);
-    outline-offset: 2px;
-}
-thead th {
-    background-color: var(--color-primario);
-    color: var(--texto-blanco);
+.precios-page {
+    max-width: 1100px;
+    margin: 60px auto;
     padding: 20px;
-    text-align: center;
-    border-bottom: 3px solid var(--color-acento); /* Esta línea es nueva */
+    min-height: 70vh;
 }

@@ -3,61 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparador de Precios - Turismo</title>
+    <title>Comparador de Precios - Turismo Jujuy</title>
     <link rel="stylesheet" href="style/precios.css">
 </head>
 <body>
-    <main class="precios-container">
-        <header>
-            <h1>Comparador de Destinos</h1>
-            <p>Elegí el plan que mejor se adapte a tu próxima aventura.</p>
-        </header>
 
-        <section class="tabla-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Servicios Incluidos</th>
-                        <th>Destino Cultural</th>
-                        <th>Destino Playa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            Acceso a Museos
-                            <span class="tooltip-container" data-tooltip="Incluye acceso ilimitado a museos nacionales">i</span>
-                        </td>
-                        <td>✅</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Guía Bilingüe
-                            <span class="tooltip-container" data-tooltip="Disponible en Inglés, Portugués y Francés">i</span>
-                        </td>
-                        <td>✅</td>
-                        <td>✅</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Equipamiento Deportivo
-                            <span class="tooltip-container" data-tooltip="Equipos de Snorkel o trekking incluidos">i</span>
-                        </td>
-                        <td>❌</td>
-                        <td>✅</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Traslados al Hotel
-                            <span class="tooltip-container" data-tooltip="Desde el aeropuerto hasta la puerta del hotel">i</span>
-                        </td>
-                        <td>✅</td>
-                        <td>✅</td>
-                    </tr>
-                </tbody>
-            </table>
+    <header id="main-header"></header>
+
+    <main class="precios-page">
+        <section class="intro-precios">
+            <h1>Tarifas de Destinos 2026</h1>
+            <p>Comparativa detallada por regiones de la provincia de Jujuy.</p>
+        </section>
+
+        <section class="tabla-section">
+            <div class="tabla-wrapper" role="region" aria-label="Comparativa de precios" tabindex="0">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Servicios</th>
+                            <th>Quebrada ($75k)</th>
+                            <th>Puna ($65k)</th>
+                            <th>Yungas ($55k)</th>
+                            <th>Valles ($45k)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fila-precio">
+                            <td>Traslados <span class="tooltip-container" data-tooltip="Desde San Salvador de Jujuy">i</span></td>
+                            <td>Privado</td>
+                            <td>4x4 Especial</td>
+                            <td>Grupal</td>
+                            <td>Grupal</td>
+                        </tr>
+                        <tr class="fila-precio">
+                            <td>Alojamiento <span class="tooltip-container" data-tooltip="Hoteles certificados">i</span></td>
+                            <td>Boutique</td>
+                            <td>Hostería</td>
+                            <td>Ecolodge</td>
+                            <td>Hotel 3*</td>
+                        </tr>
+                        <tr class="fila-precio">
+                            <td>Guía Local <span class="tooltip-container" data-tooltip="Guías certificados UNJU">i</span></td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr class="fila-precio">
+                            <td>Equipamiento <span class="tooltip-container" data-tooltip="Equipo técnico incluido">i</span></td>
+                            <td>Bastones</td>
+                            <td>Oxígeno</td>
+                            <td>Binoculares</td>
+                            <td>❌</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
+
+    <footer id="main-footer"></footer>
+
 </body>
 </html>
