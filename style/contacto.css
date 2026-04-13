@@ -1,0 +1,158 @@
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#contacto-header, #formulario-seccion, #datos-contacto {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: var(--verde-unju);
+    margin-top: 0;
+}
+
+#contacto-header {
+    text-align: center;
+}
+
+#formulario-seccion form {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.campo input, .campo select, .campo textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.campo input:focus, .campo textarea:focus {
+    outline: none;
+    border-color: var(--verde-unju);
+}
+
+button[type="submit"] {
+    background-color: var(--verde-unju);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--verde-hover);
+}
+
+#datos-contacto {
+    display: grid;
+    grid-template-columns: 200px 1fr 220px;
+    gap: 20px;
+    align-items: start;
+}
+
+.info-fila {
+    display: contents; /* Esto permite que los hijos sigan el grid del padre */
+}
+
+.info-fila h3 {
+    grid-column: 1;
+    font-size: 1.1rem;
+}
+
+.info-contenido {
+    grid-column: 2;
+    line-height: 1.6;
+}
+
+.info-contenido p {
+    margin: 0 0 10px 0;
+}
+
+.info-contenido ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.publicidad-container {
+    grid-column: 3;
+    grid-row: 1 / span 2; /* Ocupa las dos filas de la info */
+}
+
+.publicidad-contacto {
+    background: #fdfdfd;
+    padding: 15px;
+    border: 2px dashed var(--verde-unju);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.publicidad-contacto:hover {
+    transform: scale(1.05);
+}
+
+.publicidad-contacto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.publicidad-contacto a {
+    color: var(--verde-unju);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 850px) {
+    #datos-contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .info-fila {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .publicidad-container {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+
+@media (min-width: 851px) {
+    button[type="submit"] {
+        width: auto;
+        align-self: flex-start;
+    }
+}
