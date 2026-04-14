@@ -6,18 +6,22 @@
 /* ================= 1. HEADER DE CONTACTO ================= */
 .contacto-header-sec {
     text-align: center;
-    padding: 60px 30px 40px;
+    padding: 80px 30px 100px;
+    background: var(--verde-unju);
+    /* Consigna: Clip Phat Creativo dando una terminacion diagonal agresiva y moderna */
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    margin-bottom: -50px;
 }
 
 .contacto-header-sec h1 {
     font-size: 2.5rem;
-    color: var(--verde-unju);
+    color: white;
     margin-bottom: 15px;
 }
 
 .contacto-header-sec p {
     font-size: 1.1rem;
-    color: var(--color-texto-principal);
+    color: rgba(255, 255, 255, 0.9);
     max-width: 600px;
     margin: 0 auto;
 }
