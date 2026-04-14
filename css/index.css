@@ -16,15 +16,28 @@
     color: white;
 }
 
-.hero-video video {
+.video-background {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: 1;
+    pointer-events: none; /* Crucial: Evita clics indeseados en el video (pausar o ir a youtube) */
+}
+
+/* Truco CSS para que el Iframe de YouTube simule un 'object-fit: cover' sin dejar bordes negros */
+@media (min-aspect-ratio: 16/9) {
+    .video-background {
+        width: 100vw;
+        height: 56.25vw;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-background {
+        width: 177.78vh;
+        height: 100vh;
+    }
 }
 
 .hero-overlay {
