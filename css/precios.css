@@ -160,3 +160,52 @@ tbody tr:hover td {
     visibility: visible;
     transform: translateX(-50%) translateY(-3px);
 }
+
+/* ============================================================
+   SOLUCIÓN DEFINITIVA PARA TABLA RESPONSIVA
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    /* 1. Forzamos al contenedor principal a no salirse */
+    .precios-page {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 10px !important;
+        margin: 20px 0 !important;
+        overflow-x: hidden; /* Evita que el cuerpo de la página crezca */
+    }
+
+    /* 2. El truco mágico: el wrapper DEBE tener estos 3 elementos */
+    .tabla-wrapper {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important; /* Habilita el scroll lateral */
+        -webkit-overflow-scrolling: touch; /* Suavidad en iPhone */
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* 3. La tabla NO puede ser width: 100% si queremos que se deslice */
+    table {
+        width: auto !important;
+        min-width: 700px !important; /* Obliga a la tabla a mantener su forma */
+        margin: 0;
+    }
+
+    /* 4. Achicamos textos para que quepa más contenido visual */
+    th, td {
+        padding: 12px 10px !important;
+        font-size: 14px !important;
+        white-space: nowrap; /* Evita que el texto se rompa en mil líneas */
+    }
+
+    .intro-precios h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Ajuste para que el footer y header no se rompan por culpa de la tabla */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
