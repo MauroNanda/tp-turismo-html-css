@@ -232,10 +232,12 @@ Nota de defensa de código: Es avanzado, pero es la ÚNICA manera pulida de anim
     font-size: 1.4rem;
 }
 
-.tarjeta-body p {
+.preview-blog-content p {
+    font-size: 1.1rem;
+    font-weight: 600; /* Mejor contraste y cuerpo */
     color: var(--color-texto-principal);
-    font-size: 0.95rem;
-    margin: 0;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 /* ================= 4. CARRUSEL DE TESTIMONIOS (MÁGIA PURA CSS) ================= */
@@ -276,8 +278,11 @@ Nota de defensa de código: Es avanzado, pero es la ÚNICA manera pulida de anim
 
 .comentario p {
     font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 600; /* Agrega cuerpo a la letra itálica */
     margin-bottom: 20px;
     color: var(--color-texto-principal);
+    line-height: 1.6;
 }
 
 .comentario cite {
