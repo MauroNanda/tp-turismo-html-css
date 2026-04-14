@@ -1,0 +1,150 @@
+/* =============================================
+   TURISMO TP — global.css
+   Reset + Variables CSS + Dark Mode
+   ============================================= */
+
+/* ---------- RESET CSS ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* ---------- VARIABLES CSS (LIGHT MODE) ---------- */
+:root {
+    /* Colores principales */
+    --color-primario: #1b5e20;
+    --color-primario-hover: #2e7d32;
+    --color-secundario: #4caf50;
+    --color-fondo: #f4f4f4;
+    --color-texto-principal: #2c3e50;
+    --color-blanco: #ffffff;
+
+    /* Aliases de compatibilidad con código existente */
+    --verde-unju: var(--color-primario);
+    --verde-hover: var(--color-primario-hover);
+    --verde-claro: var(--color-secundario);
+    --gris-fondo: var(--color-fondo);
+    --blanco: var(--color-blanco);
+
+    /* Sombras y efectos reutilizables */
+    --sombra: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --sombra-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
+    --sombra-input: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    /* Espaciado base */
+    --espaciado-chico: 10px;
+    --espaciado-medio: 20px;
+    --espaciado-grande: 40px;
+    --espaciado-xl: 60px;
+
+    /* Bordes redondeados */
+    --radio-chico: 6px;
+    --radio-medio: 12px;
+    --radio-grande: 15px;
+
+    /* Transiciones */
+    --transicion: 0.3s ease;
+    --transicion-rapida: 0.2s ease;
+
+    /* Tamaños de fuente */
+    --fs-small: 0.875rem;
+    --fs-base: 1rem;
+    --fs-h3: 1.1rem;
+    --fs-h2: 1.5rem;
+    --fs-h1: 2rem;
+}
+
+/* ---------- DARK MODE ---------- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-fondo: #1a1a2e;
+        --color-texto-principal: #e8e8e8;
+        --color-blanco: #16213e;
+        --color-primario: #2e7d32;
+        --color-primario-hover: #4caf50;
+    }
+
+    body {
+        background-color: var(--color-fondo);
+        color: var(--color-texto-principal);
+    }
+}
+
+/* ---------- CLASE DARK-THEME (override manual) ---------- */
+.dark-theme {
+    --color-fondo: #1a1a2e;
+    --color-texto-principal: #e8e8e8;
+    --color-blanco: #16213e;
+    --color-primario: #2e7d32;
+    --color-primario-hover: #4caf50;
+}
+
+/* ---------- UTILIDADES GLOBALES ---------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus visible para accesibilidad */
+*:focus-visible {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}
+
+/* Placeholder global */
+::placeholder {
+    color: #999;
+    opacity: 1;
+}

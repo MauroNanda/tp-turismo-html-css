@@ -1,3 +1,10 @@
+/* =============================================
+   TURISMO TP — contacto.css
+   Estilos de la página de Contacto
+   ============================================= */
+
+/* Los colores y variables globales están en global.css */
+
 main {
     max-width: 900px;
     margin: 50px auto;

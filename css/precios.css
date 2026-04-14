@@ -1,10 +1,9 @@
+/* =============================================
+   TURISMO TP — precios.css
+   Estilos de la página de Precios
+   ============================================= */
 
-:root {
-    --verde-unju: #1b5e20;
-    --verde-claro: #4caf50;
-    --blanco: #ffffff;
-    --sombra: 0 8px 20px rgba(0,0,0,0.15);
-}
+/* Los colores y variables globales están en global.css */
 
 .precios-page {
     max-width: 1100px;
