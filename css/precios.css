@@ -32,25 +32,24 @@
 }
 
 .tabla-wrapper {
-    /* Clave para mobile: si es mas ancha que la pantalla, aparece barra */
     overflow-x: auto;
     background: var(--blanco);
     border-radius: 16px;
     box-shadow: var(--sombra);
-    border: 1px solid rgba(0,0,0,0.05); /* Separador sutil del fondo oscuro */
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 800px; /* Obliga a escrollear en celus angostos para no apretar letras */
+    min-width: 800px;
     text-align: center;
 }
 
 /* Encabezado */
 th {
     background-color: var(--verde-unju);
-    color: #ffffff; /* Fijo blanco porque el verde unju es oscuro siempre */
+    color: #ffffff;
     padding: 20px 15px;
     font-size: 1.1rem;
     font-weight: 800;
@@ -64,10 +63,9 @@ td {
     padding: 18px 15px;
     font-size: 1rem;
     color: var(--color-texto-principal);
-    border-bottom: 1px solid rgba(128,128,128,0.15); /* Gris clarito u oscuro inteligente */
+    border-bottom: 1px solid rgba(128,128,128,0.15);
 }
 
-/* Celda de encabezado de fila (Nombre del Servicio a la izquierda) */
 td:first-child {
     text-align: left;
     font-weight: 700;
@@ -75,7 +73,6 @@ td:first-child {
 }
 
 /* ================= 2. PSEUDO-CLASES REQUERIDAS (CEBRA Y HOVER) ================= */
-/* Filas pares tendrán un fondo sutil distinto (Cebra) para legibilidad */
 tbody tr:nth-child(even) {
     background-color: rgba(128,128,128,0.03); 
 }
@@ -86,11 +83,10 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background-color: rgba(76, 175, 80, 0.08); /* Fondo verde re contra sutil */
+    background-color: rgba(76, 175, 80, 0.08); 
     cursor: default;
 }
 
-/* Resaltar texto y volverlo verde unju cuando apoyas el mouse arriba */
 tbody tr:hover td {
     color: var(--verde-unju);
     font-weight: 700;

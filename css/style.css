@@ -8,21 +8,9 @@ body::before {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: -1;
-    /* Mantenemos tu textura de fondo norteña */
     background-image: url('../images/index/fondo.png'); 
     background-repeat: repeat;
     background-size: 400px;
     opacity: 0.06;
-    pointer-events: none; /* Asegura que el patrón de fondo no bloquee el click de ningún div */
+    pointer-events: none;
 }
-
-/* 
-=============================================
-NOTA MAURO: 
-Las variables :root y las etiquetas de texto de 'body' y 'color'
-que estaban acá, fueron eliminadas. 
-Todo se controla ahora centralmente desde css/global.css para 
-que la paleta, fuentes Nunito y el Dark Mode funcionen perfectos 
-y no se pisen entre ellos.
-=============================================
-*/

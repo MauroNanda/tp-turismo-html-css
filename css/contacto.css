@@ -46,7 +46,7 @@
     padding: 40px;
     border-radius: 16px;
     box-shadow: var(--sombra);
-    border: 1px solid rgba(0,0,0,0.05); /* Separa en Dark Mode */
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .formulario-card h2, 
@@ -99,8 +99,7 @@
     box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
 }
 
-/* === REQUISITO EVALUATIVO: VALIDACIÓN CSS ESTADO CORRECTO (:valid) === */
-/* Si completó bien (correo con @, texto sin nros, etc) borde verde. */
+/* === VALIDACIÓN CSS: ESTADO CORRECTO (:valid) === */
 .campo input:required:valid,
 .campo textarea:required:valid,
 .campo select:required:valid {
@@ -108,11 +107,7 @@
     background-color: rgba(16, 185, 129, 0.05);
 }
 
-/* === REQUISITO EVALUATIVO: VALIDACIÓN CSS ESTADO INCORRECTO (:invalid) === */
-/* 
-Truco: not(:placeholder-shown) evita que los campos arranquen en modo error (Rojo).
-Solo se va a poner rojo si el usuario empieza a tipear mal o deja por la mitad. 
-*/
+/* === VALIDACIÓN CSS: ESTADO INCORRECTO (:invalid) === */
 .campo input:required:invalid:not(:placeholder-shown),
 .campo textarea:required:invalid:not(:placeholder-shown) {
     border-color: #ef4444; 

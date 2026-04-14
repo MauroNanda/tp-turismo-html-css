@@ -117,13 +117,7 @@
 El truco para animar contadores "numéricos" en CSS puro 
 es usar @property y --num
 */
-/* 
-El truco para animar contadores "numéricos" puramente en CSS:
-1. Usamos @property para registrar `--num` como un tipo entero animable.
-2. Usamos `counter-reset` para vincular esa variable a un contador nativo de CSS.
-3. Lo mostramos usando `content: counter(num)` en un pseudo-elemento ::after.
-Nota de defensa de código: Es avanzado, pero es la ÚNICA manera pulida de animar números ascendentes SIN recurrir a JavaScript para cumplir estricto con el TP.
-*/
+/* Contador numérico CSS */
 @property --num {
   syntax: "<integer>";
   initial-value: 0;
@@ -201,7 +195,7 @@ Nota de defensa de código: Es avanzado, pero es la ÚNICA manera pulida de anim
 .tarjeta-destino {
     background: var(--blanco);
     border-radius: 16px;
-    overflow: hidden; /* Esto asegura que la foto se corte redondita arriba y no se salga de la tarjeta */
+    overflow: hidden;
     text-align: left;
     box-shadow: var(--sombra);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -240,7 +234,7 @@ Nota de defensa de código: Es avanzado, pero es la ÚNICA manera pulida de anim
     line-height: 1.6;
 }
 
-/* ================= 4. CARRUSEL DE TESTIMONIOS (MÁGIA PURA CSS) ================= */
+/* ================= 4. CARRUSEL DE TESTIMONIOS ================= */
 .carousel-css {
     width: 100%;
     overflow: hidden; /* Oculta lo que desborda */
