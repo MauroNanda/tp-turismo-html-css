@@ -217,6 +217,67 @@ main {
     animation: revealFade 0.8s ease-out forwards;
 }
 
+/* --- SISTEMA DE FILTRADO (TAGS) --- */
+
+/* Ocultar los inputs de radio originales */
+input[name="filtro-blog"] {
+    display: none;
+}
+
+/* Contenedor de los tags */
+.tags-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Estilo de cada botón (Label) */
+.tags-container label {
+    padding: 6px 18px;
+    border-radius: 50px;
+    border: 2px solid var(--verde-unju);
+    color: var(--verde-unju);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background: var(--color-blanco); /* Se adapta al modo oscuro */
+}
+
+.tags-container label:hover {
+    background: var(--verde-unju);
+    color: white;
+}
+
+#todo:checked ~ #noticias-diario label[for="todo"],
+#noticias:checked ~ #noticias-diario label[for="noticias"],
+#eventos:checked ~ #noticias-diario label[for="eventos"],
+#tips:checked ~ #noticias-diario label[for="tips"] {
+    background: var(--verde-unju);
+    color: white;
+}
+
+#noticias:checked ~ #noticias-diario .grid-diario article:not(.noticias),
+#eventos:checked ~ #noticias-diario .grid-diario article:not(.eventos),
+#tips:checked ~ #noticias-diario .grid-diario article:not(.tips) {
+    display: none;
+}
+
+#noticias:checked ~ #noticias-diario .grid-diario,
+#eventos:checked ~ #noticias-diario .grid-diario,
+#tips:checked ~ #noticias-diario .grid-diario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#noticias:checked ~ #noticias-diario .nota-principal,
+#eventos:checked ~ #noticias-diario .nota-principal,
+#tips:checked ~ #noticias-diario .nota-principal {
+    border-right: none;
+    padding-right: 0;
+}
+
 @keyframes revealFade {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
