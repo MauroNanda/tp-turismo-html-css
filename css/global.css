@@ -31,6 +31,14 @@ body {
     min-height: 100vh;
 }
 
+body:has(#dark-mode-toggle:checked) {
+    --color-fondo: #1a1a2e;
+    --color-texto-principal: #e8e8e8;
+    --color-blanco: #16213e;
+    --verde-unju: #4caf50;
+    --blanco: #16213e; /* Forzamos el alias aquí también */
+}
+
 main {
     flex: 1;
 }
@@ -117,18 +125,18 @@ select {
 }
 
 /* ---------- CLASE DARK-THEME ---------- */
-.dark-theme {
+/* ---------- LÓGICA DE MODO OSCURO (VINCULADA AL CHECKBOX) ---------- */
+body:has(#dark-mode-toggle:checked) {
     --color-fondo: #1a1a2e;
     --color-texto-principal: #e8e8e8;
     --color-blanco: #16213e;
-    --color-primario: #2e7d32;
-    --color-primario-hover: #4caf50;
-    --footer-bg: #0f0f23;
-    --footer-texto: #d0d0d0;
-    --footer-texto-suave: #b0b0b0;
-    --footer-titulo: #c0c0c0;
-    --footer-muted: #888;
-    --footer-placeholder: #666;
+    --color-primario: #4caf50;
+    --color-primario-hover: #66bb6a;
+    
+    /* Actualizamos los aliases para que agencias.css los use */
+    --blanco: var(--color-blanco);
+    --verde-unju: var(--color-primario);
+    --gris-fondo: var(--color-fondo);
 }
 
 /* ---------- UTILIDADES GLOBALES ---------- */

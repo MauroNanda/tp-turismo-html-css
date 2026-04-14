@@ -1,0 +1,236 @@
+#blog-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#blog-hero {
+    margin-bottom: 50px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.carousel-slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: slideRotation 12s infinite ease-in-out;
+}
+
+.slide {
+    width: 33.333%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.caption h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+@keyframes slideRotation {
+    0%, 25% { transform: translateX(0); }
+    33%, 58% { transform: translateX(-33.333%); }
+    66%, 91% { transform: translateX(-66.666%); }
+    100% { transform: translateX(0); }
+}
+
+.noticias-header {
+    border-bottom: 3px double var(--verde-unju);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--color-texto-principal);
+}
+
+.grid-diario {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* --- NOTA PRINCIPAL --- */
+.nota-principal {
+    border-right: 1px solid rgba(128, 128, 128, 0.3); /* Cambiado a RGBA para que se adapte */
+    padding-right: 20px;
+    color: var(--color-texto-principal);
+}
+
+.nota-principal img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.nota-principal h3 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    color: var(--color-texto-principal);
+}
+
+.nota-principal a {
+    color: var(--verde-unju);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- NOTAS SECUNDARIAS --- */
+.notas-secundarias {
+    border-right: 1px solid rgba(128, 128, 128, 0.3);
+    padding-right: 20px;
+    color: var(--color-texto-principal);
+}
+
+.nota-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(128, 128, 128, 0.3);
+}
+
+.nota-item:last-child {
+    border-bottom: none;
+}
+
+.nota-item h4 {
+    font-size: 1.2rem;
+    color: var(--color-texto-principal);
+}
+
+.nota-item p {
+    font-size: 0.9rem;
+    color: var(--color-texto-principal);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.nota-item time {
+    font-size: 0.8rem;
+    color: var(--verde-unju);
+    font-weight: bold;
+}
+
+/* --- COLUMNA BREVES --- */
+.columna-breves {
+    background: var(--color-blanco); /* Ahora usa tu variable de fondo de tarjeta */
+    padding: 20px;
+    border-radius: 12px;
+    color: var(--color-texto-principal);
+}
+
+.columna-breves h3 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--verde-unju);
+    margin-bottom: 20px;
+    color: var(--color-texto-principal);
+}
+
+.breve-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.breve-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.breve-texto strong {
+    font-size: 0.85rem;
+    color: var(--verde-unju);
+}
+
+.breve-texto p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--color-texto-principal);
+}
+
+/* --- COMENTARIOS --- */
+#comentarios-blog {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    color: var(--color-texto-principal);
+}
+
+.comentario-item {
+    display: flex;
+    gap: 15px;
+    background: var(--color-blanco); /* Usamos la variable blanca/oscura */
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    color: var(--color-texto-principal);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: var(--verde-unju);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* --- ANIMACIONES --- */
+.reveal {
+    animation: revealFade 0.8s ease-out forwards;
+}
+
+@keyframes revealFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .grid-diario { grid-template-columns: 1fr 1fr; }
+    .columna-breves { grid-column: span 2; display: flex; justify-content: space-around; }
+    .nota-principal, .notas-secundarias { border-right: none; }
+}
+
+@media (max-width: 768px) {
+    .grid-diario { grid-template-columns: 1fr; }
+    .columna-breves { flex-direction: column; grid-column: span 1; }
+    .carousel-wrapper { height: 300px; }
+}
