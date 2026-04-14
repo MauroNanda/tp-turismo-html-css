@@ -217,7 +217,6 @@ main > input[type="radio"] {
 }
 
 /*SECCIÓN RESPONSIVA*/
-
 @media (max-width: 768px) {
     /* 1. Ajuste del contenedor principal */
     main {

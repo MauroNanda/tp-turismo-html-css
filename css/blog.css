@@ -283,9 +283,7 @@ input[name="filtro-blog"] {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================================
-   RESPONSIVO BLOG - MEJORADO
-   ============================================================ */
+/* RESPONSIVO BLOG*/
 
 @media (max-width: 950px) {
     main {

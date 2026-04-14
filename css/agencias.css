@@ -149,7 +149,6 @@ main {
     #intro-agencias {
         order: 1; /* El título primero */
     }
-
     #directorio-agencias {
         order: 2; /* Las tarjetas de agencias segundo */
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

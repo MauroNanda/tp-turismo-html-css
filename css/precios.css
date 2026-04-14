@@ -161,9 +161,7 @@ tbody tr:hover td {
     transform: translateX(-50%) translateY(-3px);
 }
 
-/* ============================================================
-   SOLUCIÓN DEFINITIVA PARA TABLA RESPONSIVA
-   ============================================================ */
+/*TABLA RESPONSIVA*/
 
 @media (max-width: 1024px) {
     /* 1. Forzamos al contenedor principal a no salirse */
