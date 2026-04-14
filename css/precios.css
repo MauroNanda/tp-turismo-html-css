@@ -77,7 +77,7 @@ td {
     bottom: 140%;
     left: 50%;
     transform: translateX(-50%);
-    background: #333;
+    background: var(--color-texto-principal);
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
