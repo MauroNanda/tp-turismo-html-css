@@ -283,15 +283,93 @@ input[name="filtro-blog"] {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .grid-diario { grid-template-columns: 1fr 1fr; }
-    .columna-breves { grid-column: span 2; display: flex; justify-content: space-around; }
-    .nota-principal, .notas-secundarias { border-right: none; }
+/* RESPONSIVO BLOG*/
+
+@media (max-width: 950px) {
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    /* Ajuste del carrusel para tablet/móvil */
+    .carousel-wrapper {
+        height: 350px; 
+        border-radius: 15px;
+    }
+
+    .caption h2 {
+        font-size: 1.5rem;
+    }
+
+    /* El grid de noticias pasa a ser una sola columna */
+    .grid-diario {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .noticias-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* Hacemos que los tags se puedan deslizar de costado si no entran */
+    .tags-container {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        white-space: nowrap; /* Evita que los botones bajen */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tags-container label {
+        flex-shrink: 0; /* Evita que se aplasten */
+    }
+
+    /* Quitamos bordes laterales que separan columnas en escritorio */
+    .nota-principal, .notas-secundarias {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+        padding-bottom: 20px;
+    }
 }
 
-@media (max-width: 768px) {
-    .grid-diario { grid-template-columns: 1fr; }
-    .columna-breves { flex-direction: column; grid-column: span 1; }
-    .carousel-wrapper { height: 300px; }
+@media (max-width: 600px) {
+    .carousel-wrapper {
+        height: 250px;
+    }
+
+    .caption {
+        padding: 20px;
+    }
+
+    .caption h2 {
+        font-size: 1.2rem;
+    }
+
+    .caption p {
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Corta el texto largo en la foto */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Breves del norte: las ponemos en fila */
+    .columna-breves {
+        background: rgba(128, 128, 128, 0.05);
+    }
+
+    .comentario-item {
+        flex-direction: column; /* Avatar arriba del texto en móviles */
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Fix para el modo oscuro en los tags cuando están activos */
+#dark-mode-toggle:checked ~ * .tags-container label {
+    background: var(--color-blanco);
+    color: var(--verde-unju);
 }

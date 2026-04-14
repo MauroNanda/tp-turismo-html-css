@@ -42,6 +42,20 @@ main > input[type="radio"] {
     font-weight: bold;
     transition: 0.3s;
 }
+@media (max-width: 768px) {
+    .filtros-destinos {
+        justify-content: flex-start; /* Alinea al inicio */
+        overflow-x: auto;            /* Permite scroll horizontal */
+        padding: 10px 20px;          /* Espacio para que no se corte la sombra */
+        gap: 10px;
+        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    }
+
+    .filtros-destinos label {
+        white-space: nowrap;         /* Evita que el texto se parta en dos líneas */
+        flex-shrink: 0;              /* Evita que los botones se achiquen */
+    }
+}
 
 /* Selección de filtros */
 #todos:checked ~ .filtros-destinos label[for="todos"],
@@ -202,20 +216,56 @@ main > input[type="radio"] {
     border: none;
 }
 
-/* Ajuste para móviles */
-@media (max-width: 600px) {
-    #presentacion-destinos h2 { font-size: 1.8rem; }
-    #presentacion-destinos iframe { height: 350px; }
-}
-
-/* --- RESPONSIVE --- */
+/*SECCIÓN RESPONSIVA*/
 @media (max-width: 768px) {
-    #recomendados-temporada { 
-        flex-direction: column; 
-        text-align: center; 
+    /* 1. Ajuste del contenedor principal */
+    main {
+        margin: 10px auto;
+        padding: 15px;
+        width: 100%;
+        overflow-x: hidden; /* Evita scroll lateral molesto */
     }
-    
+
+    /* 2. Filtros: Ahora se pueden deslizar lateralmente si no caben */
+    .filtros-destinos {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 10px 5px;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filtros-destinos label {
+        white-space: nowrap;
+        flex-shrink: 0;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* 3. Galeria: Forzamos a que las tarjetas bajen de tamaño */
+    #galeria-destinos {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    /* 4. Mapa: Que ocupe el ancho total */
+    .mapa-container {
+        max-width: 100%;
+    }
+
+    #presentacion-destinos iframe {
+        height: 300px;
+    }
+
+    /* 5. Aside (Recomendados): Imagen arriba o abajo, no al costado */
+    #recomendados-temporada {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
     #recomendados-temporada img {
         width: 100%;
+        max-width: 280px;
     }
 }

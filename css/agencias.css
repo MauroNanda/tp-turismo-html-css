@@ -137,14 +137,33 @@ main {
     font-weight: 800;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+/*Responsividad*/
 
-/* --- Responsivo --- */
 @media (max-width: 950px) {
-    main { grid-template-columns: 1fr; }
-    #directorio-agencias { grid-template-columns: repeat(2, 1fr); }
-}
+    main { 
+        display: flex;
+        flex-direction: column; 
+        padding: 15px;
+    }
 
-@media (max-width: 650px) {
-    #directorio-agencias { grid-template-columns: 1fr; }
-    .partner-card { height: 320px; }
+    #intro-agencias {
+        order: 1; /* El título primero */
+    }
+    #directorio-agencias {
+        order: 2; /* Las tarjetas de agencias segundo */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        width: 100%;
+        justify-items: center;
+    }
+
+    .garantia-box {
+        order: 3; /* El Aside ahora bajará al final de todo */
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .partner-card {
+        width: 100%;
+        max-width: 320px; /* Evita que se estiren demasiado */
+    }
 }
