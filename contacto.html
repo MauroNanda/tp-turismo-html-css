@@ -52,7 +52,9 @@
                                 <a href="#">Gastronomía Local</a>
                             </div>
                             <div class="mega-column mega-img">
-                                <img src="https://via.placeholder.com/200x150?text=Jujuy" alt="Destino destacado">
+                                <a href="destinos.html" aria-label="Ver todos los destinos">
+                                    <img src="images/index/purmamarca.webp" alt="Destino destacado: Purmamarca" style="border-radius: var(--radio-chico); width: 100%; height: 140px; object-fit: cover; transition: transform 0.3s ease;">
+                                </a>
                             </div>
                         </div>
                     </li>
@@ -84,77 +86,96 @@
         </div>
     </header>
 
-    <main>
-        <section id="contacto-header">
+    <main class="main-contacto">
+        <section class="contacto-header-sec">
             <h1>Ponete en contacto con nosotros</h1>
-            <p>Dejanos tu consulta y un asesor te responderá a la brevedad.</p>
-            <!-- Centrado al medio y usar fuente generica contacto-->
+            <p>Dejanos tu consulta y nuestro equipo de expertos en el norte argentino te responderá a la brevedad.</p>
         </section>
 
-        <section id="formulario-seccion">
-            <form action="#" method="post">
+        <section class="contacto-grid-container">
+            <div class="formulario-card">
+                <h2>Envíanos un mensaje</h2>
+                <form action="#" method="post" class="form-turismo">
+                    
+                    <div class="campo">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Mauro Nanda" pattern="[A-Za-zÀ-ÿ\s]{3,}" title="Debe contener solo letras y al menos 3 caracteres." required>
+                        <span class="error-icon"></span>
+                    </div>
 
-                <div class="campo">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre" required>
+                    <div class="campo">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                        <span class="error-icon"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="asunto">Asunto:</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Seleccioná un motivo...</option>
+                            <option value="consulta">Consulta general sobre destinos</option>
+                            <option value="presupuesto">Pedido de presupuesto grupal</option>
+                            <option value="queja">Sugerencias o Reclamos</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos tu idea o consulta... (mínimo 10 caracteres)" minlength="10" required></textarea>
+                        <span class="error-icon"></span>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+                    <p class="form-hint">Los campos bordeados en verde están listos para enviar.</p>
+                </form>
+            </div>
+
+            <aside class="info-card">
+                <h2>Nuestras Oficinas</h2>
+                
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <strong>Dirección:</strong>
+                        <p>Calle Falsa 123, San Salvador de Jujuy,<br>Jujuy, Argentina.</p>
+                    </div>
                 </div>
 
-                <div class="campo">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div>
+                        <strong>Líneas Directas:</strong>
+                        <p>Tel: 0388 444-5555<br>WhatsApp: +54 9 388 123 4567</p>
+                    </div>
                 </div>
 
-                <div class="campo">
-                    <label for="asunto">Asunto:</label>
-                    <select id="asunto" name="asunto">
-                        <option value="consulta">Consulta general</option>
-                        <option value="presupuesto">Pedido de presupuesto</option>
-                        <option value="queja">Reclamo</option>
-                    </select>
+                <div class="info-item">
+                    <span class="info-icon">🕒</span>
+                    <div>
+                        <strong>Horarios de Atención:</strong>
+                        <p>Lunes a Viernes: 09:00 a 20:00 hs<br>Sábados: 10:00 a 14:00 hs</p>
+                    </div>
                 </div>
 
-                <div class="campo">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?"></textarea>
+                <div class="mapa-responsive-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.1952548198674!2d-65.29779028554265!3d-24.185757084490204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b5218e3e73c5b%3A0x5d68aa09f54072b!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy!5e0!3m2!1ses!2sar!4v1617812345678!5m2!1ses!2sar"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        title="Ubicación Agencia Jujuy"></iframe>
                 </div>
-
-                <button type="submit">Enviar mensaje</button>
-            </form>
-            <!-- Aqui el formulario ocupara el ancho de la pagina no del todo pero si jasjajs-->
+            </aside>
         </section>
-        <section id="datos-contacto">
-    <div class="info-columna">
-        <div class="info-fila">
-            <h3>Nuestra Oficina</h3>
-            <div class="info-contenido">
-                <p>Calle Falsa 123, San Salvador de Jujuy, Jujuy, Argentina.</p>
-                <p>Teléfono: 0388 444-5555</p>
-            </div>
-        </div>
-
-        <div class="info-fila">
-            <h3>Horarios de atención</h3>
-            <div class="info-contenido">
-                <ul>
-                    <li><strong>Lunes a Viernes:</strong> 09:00 a 20:00 hs</li>
-                    <li><strong>Sábados:</strong> 10:00 a 14:00 hs</li>
-                    <li><strong>Domingos y Feriados:</strong> Cerrado</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <aside class="publicidad-contacto">
-        <img src="https://via.placeholder.com/150x150?text=Promo" alt="Publicidad">
-        <a href="precios.html">Ver promociones</a>
-    </aside>
     </main>
 
     <footer class="footer-global">
         <div class="footer-container">
             <div class="footer-info">
-                <h3>🌎 Turismo Jujuy</h3>
+                <h3 style="display:flex; align-items:center; gap:8px;">
+                    <svg viewBox="0 0 24 24" width="24" height="24" style="fill: var(--verde-unju);">
+                        <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.8 13.8 7.3 10.5 7.3 10.5L2 18h20L14 6z" />
+                    </svg>
+                    Turismo Jujuy
+                </h3>
                 <p>Tu puerta de entrada a los paisajes más increíbles del norte argentino. Explorá la Quebrada, la Puna y los Valles con guías expertos y precios transparentes.</p>
                 <form class="newsletter-form footer-compact-newsletter" action="#" method="post">
                     <input class="footer-compact-input" type="email" placeholder="Tu email" required aria-label="Email para newsletter">

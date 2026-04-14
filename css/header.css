@@ -64,7 +64,8 @@
 
 .nav-links a {
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 800; /* Extra bold para Nunito */
+    font-size: 1.1rem; /* Más grande */
     padding: 8px 12px;
     border-radius: var(--radio-chico);
     transition: color 0.3s, background-color 0.3s;
