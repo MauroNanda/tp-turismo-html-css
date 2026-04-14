@@ -1,31 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turismo | Home</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
+
 <body id="home-page">
-    <header>
-       <!-- <h1>Turismo</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="agencias.html">Agencias</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="precios.html">Precios</a></li>
-                <li><a href="destinos.html">Destinos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-        Prototipo de Header-->
+    <!-- Toggles Ocultos CSS-Only -->
+    <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+    <input type="checkbox" id="menu-toggle" class="sr-only menu-toggle-check">
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" class="logo-svg">
+                    <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.8 13.8 7.3 10.5 7.3 10.5L2 18h20L14 6z" />
+                </svg>
+                Turismo Jujuy
+            </a>
+
+            <label for="menu-toggle" class="menu-btn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="has-dropdown">
+                        <a href="destinos.html">Destinos <span class="arrow">▼</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-column">
+                                <h4>Regiones</h4>
+                                <a href="destinos.html#quebrada">Quebrada de Humahuaca</a>
+                                <a href="destinos.html#puna">La Puna</a>
+                                <a href="destinos.html#yungas">Selva de las Yungas</a>
+                                <a href="destinos.html#valles">Valles Templados</a>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Experiencias</h4>
+                                <a href="#">Aventura Extrema</a>
+                                <a href="#">Cultura y Tradición</a>
+                                <a href="#">Gastronomía Local</a>
+                            </div>
+                            <div class="mega-column mega-img">
+                                <img src="https://via.placeholder.com/200x150?text=Jujuy" alt="Destino destacado">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="agencias.html">Agencias <span class="arrow">▼</span></a>
+                        <div class="mega-menu mega-menu-small">
+                            <div class="mega-column">
+                                <h4>Por Tipo</h4>
+                                <a href="agencias.html">Aventura</a>
+                                <a href="agencias.html">Cultural</a>
+                                <a href="agencias.html">Gastronómico</a>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Servicios</h4>
+                                <a href="agencias.html">Excursiones</a>
+                                <a href="agencias.html">Viajes Privados</a>
+                                <a href="agencias.html">Paquetes</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="precios.html">Precios <span class="arrow">▼</span></a>
+                        <div class="mega-menu mega-menu-small">
+                            <div class="mega-column">
+                                <h4>Regiones</h4>
+                                <a href="precios.html">Quebrada</a>
+                                <a href="precios.html">Puna</a>
+                                <a href="precios.html">Yungas</a>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Planes</h4>
+                                <a href="precios.html">Individual</a>
+                                <a href="precios.html">Grupal</a>
+                                <a href="precios.html">Premium</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <label for="dark-mode-toggle" class="theme-toggle" aria-label="Cambiar tema oscuro/claro">
+                        <span class="icon-sun">☀️</span>
+                        <span class="icon-moon">🌙</span>
+                    </label>
+                </div>
+            </nav>
+        </div>
     </header>
     <main>
         <section class="Hero">
-            <h2>Bienvenido a Turismo</h2>
+            <h1>Bienvenido a Turismo</h1>
             <p>Descubre los mejores destinos, ofertas y consejos para tus próximas vacaciones.</p>
             <!-- Para el Hero poner las imagenes de fondo con el texto puesto con css nomas dejo subida las dos imagenes en la carpeta image/index. preferentemente usar efecto carrousel para las imagenes aunque solo son 2 -->
         </section>
@@ -50,7 +129,7 @@
                 <h3>Precios Transparentes</h3>
                 <p>Sin cargos ocultos. El precio que ves es el precio final.</p>
             </article>
-        <!-- La seccion de aca que sea vertical, separado en 3 cards de manera horizontal, le puse el mismo nombre de clase por que asi se trabaja por igual en los 3 articulos-->
+            <!-- La seccion de aca que sea vertical, separado en 3 cards de manera horizontal, le puse el mismo nombre de clase por que asi se trabaja por igual en los 3 articulos-->
         </section>
         <section id="testimonios">
             <h2>Lo que dicen nuestros viajeros</h2>
@@ -71,7 +150,8 @@
             </article>
 
             <article class="comentario">
-                <p>"Mi idea de viajar con amigos se complicaba por la otranizacion pero pudimos resolverlo gracias a ellos un 10/10 el servicio!."</p>
+                <p>"Mi idea de viajar con amigos se complicaba por la otranizacion pero pudimos resolverlo gracias a
+                    ellos un 10/10 el servicio!."</p>
                 <cite>— Irene Quiroga</cite>
             </article>
             <article class="comentario">
@@ -82,25 +162,28 @@
         </section>
         <section id="invitacion-blog">
             <h2>Enterate de las últimas novedades</h2>
-            <p>En nuestro blog compartimos consejos, guías de viaje y las mejores anécdotas de nuestros exploradores.</p>
-    
+            <p>En nuestro blog compartimos consejos, guías de viaje y las mejores anécdotas de nuestros exploradores.
+            </p>
+
             <article class="preview-blog">
                 <img src="images/index/blog.jpeg" alt="Imagen miniatura del blog">
                 <h3>5 tips para armar tu valija como un experto</h3>
                 <p>No sufras más con el espacio. Te enseñamos a optimizar cada rincón de tu equipaje...</p>
                 <a href="blog.html">Leer más entradas en el blog</a>
             </article>
-        <!-- Seccion de invitacion a leer nuestro blog agregar el estilo a gusto, preferentemente con un diseño Scroll Reveal o Fade-in on Scroll-->
+            <!-- Seccion de invitacion a leer nuestro blog agregar el estilo a gusto, preferentemente con un diseño Scroll Reveal o Fade-in on Scroll-->
         </section>
     </main>
     <footer class="footer-global">
         <div class="footer-container">
             <!-- Columna 1: Info + Newsletter -->
             <div class="footer-info">
-                <h2>🌎 Turismo Jujuy</h2>
-                <p>Tu puerta de entrada a los paisajes más increíbles del norte argentino. Explorá la Quebrada, la Puna y los Valles con guías expertos y precios transparentes.</p>
+                <h3>🌎 Turismo Jujuy</h3>
+                <p>Tu puerta de entrada a los paisajes más increíbles del norte argentino. Explorá la Quebrada, la Puna
+                    y los Valles con guías expertos y precios transparentes.</p>
                 <form class="newsletter-form footer-compact-newsletter" action="#" method="post">
-                    <input class="footer-compact-input" type="email" placeholder="Tu email" required aria-label="Email para newsletter">
+                    <input class="footer-compact-input" type="email" placeholder="Tu email" required
+                        aria-label="Email para newsletter">
                     <button class="footer-compact-btn" type="submit">Suscribirme</button>
                 </form>
             </div>
@@ -124,24 +207,30 @@
                     <!-- Facebook SVG -->
                     <a href="#" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                         </svg>
                     </a>
                     <!-- Instagram SVG -->
                     <a href="#" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                         </svg>
                     </a>
                     <!-- Twitter/X SVG -->
                     <a href="#" aria-label="Twitter">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                     </a>
                 </div>
                 <div class="mapa-google">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.1952548198674!2d-65.29779028554265!3d-24.185757084490204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b5218e3e73c5b%3A0x5d68aa09f54072b!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy!5e0!3m2!1ses!2sar!4v1617812345678!5m2!1ses!2sar" width="280" height="120" style="border:0;" allowfullscreen="" loading="lazy" title="Ubicación Turismo Jujuy"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.1952548198674!2d-65.29779028554265!3d-24.185757084490204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b5218e3e73c5b%3A0x5d68aa09f54072b!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy!5e0!3m2!1ses!2sar!4v1617812345678!5m2!1ses!2sar"
+                        width="280" height="120" style="border:0;" allowfullscreen="" loading="lazy"
+                        title="Ubicación Turismo Jujuy"></iframe>
                 </div>
             </div>
         </div>
@@ -153,4 +242,5 @@
         </div>
     </footer>
 </body>
+
 </html>

@@ -1,0 +1,260 @@
+/* =============================================
+   TURISMO TP — header.css
+   Mega-Menú, Modo Oscuro CSS-only y Navegación
+   ============================================= */
+
+.main-header {
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--verde-unju);
+    text-decoration: none;
+}
+
+.logo-svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--verde-unju);
+    transition: transform 0.3s ease;
+}
+
+/* Transición SVG requerida por consigna */
+.logo:hover .logo-svg {
+    transform: rotate(15deg) scale(1.1); 
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: var(--radio-chico);
+    transition: color 0.3s, background-color 0.3s;
+    color: var(--color-texto-principal);
+}
+
+.nav-links a:hover {
+    background-color: var(--gris-fondo);
+    color: var(--verde-unju);
+}
+
+/* ================= MEGA MENU (CSS ONLY) ================= */
+.has-dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: -100px;
+    width: 500px;
+    background: var(--blanco);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: var(--radio-medio);
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 1100;
+}
+
+.mega-column h4 {
+    color: var(--verde-unju);
+    margin-bottom: 12px;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--verde-claro);
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.mega-column a {
+    display: block;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    border-radius: 0;
+    color: var(--color-texto-principal);
+    font-weight: 500;
+}
+
+.mega-column a:hover {
+    background: transparent;
+    color: var(--verde-unju);
+    padding-left: 8px; /* Micro animación en enlace (Consigna) */
+}
+
+.mega-img img {
+    border-radius: var(--radio-chico);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Mega menú más chico para Agencias y Precios */
+.mega-menu-small {
+    width: 340px;
+    grid-template-columns: 1fr 1fr;
+    left: -50px;
+}
+
+/* ================= DARK MODE TOGGLE (CSS ONLY) ================= */
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 50%;
+    background: var(--gris-fondo);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px; 
+    height: 36px;
+    user-select: none;
+    transition: transform var(--transicion-rapida);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Lógica de cambio de ícono interactivo puramente con CSS */
+.icon-moon { display: none; }
+
+/* El truco mágico: Si el checkbox oculto arriba del body está marcado, aplicamos estilos a TODO el documento */
+:root:has(#dark-mode-toggle:checked) .icon-sun { display: none; }
+:root:has(#dark-mode-toggle:checked) .icon-moon { display: inline; }
+
+/* Reglas Globales de Modo Oscuro activadas por checkbox (Sin JS) */
+:root:has(#dark-mode-toggle:checked) {
+    --color-fondo: #1a1a2e;
+    --color-texto-principal: #e8e8e8;
+    --color-blanco: #16213e;
+    --color-primario: #2e7d32;
+    --color-primario-hover: #4caf50;
+    --verde-unju: #2e7d32;
+    --verde-claro: #4caf50;
+    --gris-fondo: #16213e;
+    --footer-bg: #0f0f23;
+    --footer-texto: #d0d0d0;
+    --footer-texto-suave: #b0b0b0;
+    --footer-titulo: #c0c0c0;
+    --footer-muted: #888;
+    --footer-placeholder: #666;
+}
+
+:root:has(#dark-mode-toggle:checked) body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+}
+
+/* ================= HAMBURGUER MENU MOBILE (CSS ONLY) ================= */
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--verde-unju);
+    transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+    .menu-btn { display: flex; }
+    
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--blanco);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        max-height: 0; /* Oculto con height 0 */
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: var(--sombra);
+    }
+    
+    /* Toggle Mobile interactivo (CSS ONLY) */
+    .menu-toggle-check:checked ~ .main-header .main-nav {
+        max-height: 800px;
+        padding: 20px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .nav-links li { width: 100%; }
+    
+    .mega-menu {
+        position: static;
+        width: 100%;
+        grid-template-columns: 1fr;
+        opacity: 1; visibility: visible;
+        transform: none; box-shadow: none;
+        display: none;
+    }
+    
+    .has-dropdown:hover .mega-menu {
+        display: grid;
+    }
+    
+    /* Animación del ícono hamburguesa (CSS ONLY) */
+    .menu-toggle-check:checked ~ .main-header .menu-btn span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle-check:checked ~ .main-header .menu-btn span:nth-child(2) { opacity: 0; }
+    .menu-toggle-check:checked ~ .main-header .menu-btn span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
