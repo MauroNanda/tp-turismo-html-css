@@ -144,7 +144,8 @@ La tabla de precios aplica pseudo-clases estructurales para mejorar la legibilid
 
 El proyecto está preparado para ser publicado directamente desde GitHub Pages, dado que se trata de archivos estáticos sin dependencias de servidor ni proceso de build. Para activarlo, basta con habilitar GitHub Pages desde la configuración del repositorio apuntando a la rama `main`.
 
-URL del repositorio: [https://github.com/MauroNanda/tp-turismo-html-css](https://github.com/MauroNanda/tp-turismo-html-css)
+URL del repositorio: https://github.com/MauroNanda/tp-turismo-html-css
+URL de la Demo https://mauronanda.github.io/tp-turismo-html-css/index.html
 
 ---
 
