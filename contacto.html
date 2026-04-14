@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turismo | Contacto</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/contacto.css">
 </head>
+
 <body id="contacto-page">
     <header>
         <p>Pegar aqui el link del header cuando esté listo</p>
@@ -20,7 +23,7 @@
 
         <section id="formulario-seccion">
             <form action="#" method="post">
-                
+
                 <div class="campo">
                     <label for="nombre">Nombre completo:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre" required>
@@ -50,23 +53,37 @@
             <!-- Aqui el formulario ocupara el ancho de la pagina no del todo pero si jasjajs-->
         </section>
         <section id="datos-contacto">
+    <div class="info-columna">
+        <div class="info-fila">
             <h3>Nuestra Oficina</h3>
-            <p>Calle Falsa 123, San Salvador de Jujuy, Jujuy, Argentina.</p>
-            <p>Teléfono: 0388 444-5555</p>
+            <div class="info-contenido">
+                <p>Calle Falsa 123, San Salvador de Jujuy, Jujuy, Argentina.</p>
+                <p>Teléfono: 0388 444-5555</p>
+            </div>
+        </div>
+
+        <div class="info-fila">
             <h3>Horarios de atención</h3>
-            <ul>
-                <li><strong>Lunes a Viernes:</strong> 09:00 a 20:00 hs</li>
-                <li><strong>Sábados:</strong> 10:00 a 14:00 hs</li>
-                <li><strong>Domingos y Feriados:</strong> Cerrado</li>
-            </ul>
-            <aside class="publicidad-contacto">
-                <img src="images/index/publicidad.gif" alt="Publicidad">
-                <!-- Pequeño sector de publicidad para rellenar un poco la seccion, quedará del lado derecho del Datos de contacto -->
-            </aside>
+            <div class="info-contenido">
+                <ul>
+                    <li><strong>Lunes a Viernes:</strong> 09:00 a 20:00 hs</li>
+                    <li><strong>Sábados:</strong> 10:00 a 14:00 hs</li>
+                    <li><strong>Domingos y Feriados:</strong> Cerrado</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <aside class="publicidad-contacto">
+        <img src="images/index/publicidad.gif" alt="Publicidad">
+        <a href="precios.html">Ver promociones</a>
+    </aside>
+</section>
         </section>
     </main>
     <footer>
         <p>&copy; 2026 Turismo. Todos los derechos reservados.</p>
     </footer>
-    </body>
+</body>
+
 </html>

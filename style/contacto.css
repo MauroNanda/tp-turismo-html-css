@@ -1,0 +1,155 @@
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#contacto-header, #formulario-seccion, #datos-contacto {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: var(--verde-unju);
+    margin-top: 0;
+}
+
+#contacto-header {
+    text-align: center;
+}
+
+#formulario-seccion form {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.campo input, .campo select, .campo textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.campo input:focus, .campo textarea:focus {
+    outline: none;
+    border-color: var(--verde-unju);
+}
+
+button[type="submit"] {
+    background-color: var(--verde-unju);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--verde-hover);
+}
+
+#datos-contacto {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 40px;
+    align-items: start;
+}
+
+.info-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-fila {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+    align-items: baseline;
+}
+
+.info-fila h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.info-contenido {
+    line-height: 1.6;
+}
+
+.info-contenido p, .info-contenido ul {
+    margin: 0;
+}
+
+.info-contenido ul {
+    list-style: none;
+    padding: 0;
+}
+
+.publicidad-contacto {
+    background: #fdfdfd;
+    padding: 20px;
+    border: 2px dashed var(--verde-unju);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+}
+
+.publicidad-contacto img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.publicidad-contacto a {
+    color: var(--verde-unju);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+    #datos-contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .info-fila {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .publicidad-contacto {
+        width: 100%;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 801px) {
+    button[type="submit"] {
+        width: auto;
+        align-self: flex-start;
+    }
+}
