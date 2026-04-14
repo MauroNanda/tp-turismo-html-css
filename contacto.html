@@ -223,6 +223,43 @@
             <p>Facultad de Ingeniería — UNJU</p>
         </div>
     </footer>
+    <div id="loading-overlay" class="loading-overlay">
+    <div class="spinner"></div>
+    <p>Enviando tu consulta...</p>
+</div>
+
+<div id="modal-confirmacion" class="modal-overlay">
+    <div class="modal-content">
+        <div class="success-icon">✓</div>
+        <h2>¡Mensaje Enviado!</h2>
+        <p>Gracias por contactarnos. Tu consulta sobre Jujuy será respondida a la brevedad.</p>
+        <button onclick="cerrarModal()" class="btn-modal">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    const form = document.querySelector('.form-turismo');
+    const loader = document.getElementById('loading-overlay');
+    const modal = document.getElementById('modal-confirmacion');
+
+    form.addEventListener('submit', (e) => {
+        // Verificamos si el formulario es válido antes de mostrar efectos
+        if (form.checkValidity()) {
+            e.preventDefault(); 
+            loader.classList.add('active'); // Mostrar Spinner
+
+            setTimeout(() => {
+                loader.classList.remove('active'); // Quitar Spinner
+                modal.classList.add('active');    // Mostrar Modal
+                form.reset();                     // Limpiar campos
+            }, 2000); // Simulación de carga de 2 segundos
+        }
+    });
+
+    function cerrarModal() {
+        modal.classList.remove('active');
+    }
+</script>
 </body>
 
 </html>
