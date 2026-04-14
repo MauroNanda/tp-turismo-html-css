@@ -163,3 +163,188 @@ es usar @property y --num
     letter-spacing: 2px;
     margin-top: 10px;
 }
+
+/* ================= COMPONENTES COMPARTIDOS: HEADERS DE SECCIÓN ================= */
+.seccion-destacada,
+.seccion-testimonios,
+.seccion-blog-fade {
+    padding: var(--espaciado-xl) 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-header {
+    text-align: center;
+    margin-bottom: var(--espaciado-grande);
+}
+
+.seccion-header h2 {
+    font-size: 2.2rem;
+    color: var(--verde-unju);
+    margin-bottom: 10px;
+}
+
+/* ================= 3. TARJETAS DE BENEFICIOS (CON EFECTO HOVER) ================= */
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-beneficio {
+    background: var(--blanco);
+    border-radius: var(--radio-medio);
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    transition: transform var(--transicion), box-shadow var(--transicion);
+    /* Para dark mode */
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tarjeta-beneficio:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--sombra-hover);
+}
+
+.tarjeta-beneficio img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 3px solid var(--verde-claro);
+}
+
+.tarjeta-beneficio h3 {
+    color: var(--color-texto-principal);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* ================= 4. CARRUSEL DE TESTIMONIOS (MÁGIA PURA CSS) ================= */
+.carousel-css {
+    width: 100%;
+    overflow: hidden; /* Oculta lo que desborda */
+    padding: 20px 0;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    width: calc(350px * 10); /* Estimación de ancho */
+    animation: scrollTestimonios 20s linear infinite;
+}
+
+/* Pausar animación cuando el usuario hace hover */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.comentario {
+    flex: 0 0 350px;
+    background: var(--gris-fondo);
+    padding: 30px;
+    border-radius: var(--radio-medio);
+    box-shadow: var(--sombra-input);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.estrellas {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.comentario p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--color-texto-principal);
+}
+
+.comentario cite {
+    font-weight: bold;
+    color: var(--verde-unju);
+    text-align: right;
+    display: block;
+}
+
+/* Truco fundamental para el scroll infinito CSS: 
+Se asume que los testimonios se clonan en el HTML para hacer un loop sin cortes */
+@keyframes scrollTestimonios {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-350px * 5 - 30px * 5)); } /* Mueve exactamente la mitad del contenido clonado */
+}
+
+/* ================= 5. INVITACIÓN BLOG ================= */
+.seccion-blog-fade {
+    /* Animación genérica de fade-in on scroll mediante keyframes simples */
+    animation: fadeInScroll 1.5s ease-in-out;
+}
+
+@keyframes fadeInScroll {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.preview-blog {
+    display: flex;
+    background: var(--blanco);
+    border-radius: var(--radio-medio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform var(--transicion);
+}
+
+.preview-blog:hover {
+    transform: scale(1.02);
+}
+
+.preview-blog img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.preview-blog-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preview-blog-content h3 {
+    font-size: 1.8rem;
+    color: var(--color-texto-principal);
+    margin-bottom: 15px;
+}
+
+.btn-secundario {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    color: var(--verde-unju);
+    border: 2px solid var(--verde-unju);
+    border-radius: var(--radio-chico);
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+    transition: background var(--transicion), color var(--transicion);
+}
+
+.btn-secundario:hover {
+    background: var(--verde-unju);
+    color: var(--blanco);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .preview-blog {
+        flex-direction: column;
+    }
+    .preview-blog img {
+        width: 100%;
+        height: 250px;
+    }
+}

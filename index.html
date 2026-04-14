@@ -132,69 +132,73 @@
             </div>
         </section>
 
-        <section id="beneficios-turismo">
-            <h2>¿Por qué elegir viajar con nosotros?</h2>
-            <p>Te ofrecemos la mejor experiencia en cada paso de tu aventura.</p>
-            <article class="tarjeta-beneficio">
-                <img src="images/index/transporte.jpeg" alt="Icono de seguridad">
-                <h3>Seguridad Garantizada</h3>
-                <p>Contamos con seguros de viaje integrales y asistencia las 24 horas.</p>
-            </article>
+        <section id="beneficios-turismo" class="seccion-destacada">
+            <div class="seccion-header">
+                <h2>¿Por qué elegir viajar con nosotros?</h2>
+                <p>Te ofrecemos la mejor experiencia en cada paso de tu aventura.</p>
+            </div>
+            
+            <div class="beneficios-grid">
+                <article class="tarjeta-beneficio">
+                    <img src="images/index/transporte.jpeg" alt="Icono de seguridad">
+                    <h3>Seguridad Garantizada</h3>
+                    <p>Contamos con seguros de viaje integrales y asistencia las 24 horas.</p>
+                </article>
 
-            <article class="tarjeta-beneficio">
-                <img src="images/index/guia.jpeg" alt="Icono de guía">
-                <h3>Guías Expertos</h3>
-                <p>Nuestros guías locales conocen cada rincón y te llevarán a lugares exclusivos.</p>
-            </article>
+                <article class="tarjeta-beneficio">
+                    <img src="images/index/guia.jpeg" alt="Icono de guía">
+                    <h3>Guías Expertos</h3>
+                    <p>Nuestros guías locales conocen cada rincón y te llevarán a lugares exclusivos.</p>
+                </article>
 
-            <article class="tarjeta-beneficio">
-                <img src="images/index/precios.jpeg" alt="Icono de precio">
-                <h3>Precios Transparentes</h3>
-                <p>Sin cargos ocultos. El precio que ves es el precio final.</p>
-            </article>
-            <!-- La seccion de aca que sea vertical, separado en 3 cards de manera horizontal, le puse el mismo nombre de clase por que asi se trabaja por igual en los 3 articulos-->
+                <article class="tarjeta-beneficio">
+                    <img src="images/index/precios.jpeg" alt="Icono de precio">
+                    <h3>Precios Transparentes</h3>
+                    <p>Sin cargos ocultos. El precio que ves es el precio final.</p>
+                </article>
+            </div>
         </section>
-        <section id="testimonios">
-            <h2>Lo que dicen nuestros viajeros</h2>
 
-            <article class="comentario">
-                <p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p>
-                <cite>— Siomara Venicio</cite>
-            </article>
+        <section id="testimonios" class="seccion-testimonios">
+            <div class="seccion-header">
+                <h2>Lo que dicen nuestros viajeros</h2>
+                <p>Opiniones reales de quienes vivieron la experiencia jujuyeña.</p>
+            </div>
 
-            <article class="comentario">
-                <p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p>
-                <cite>— Gabriel Calisaya</cite>
-            </article>
-
-            <article class="comentario">
-                <p>"Precios super accesibles recomendadisimo!"</p>
-                <cite>— Sofia Verdeja</cite>
-            </article>
-
-            <article class="comentario">
-                <p>"Mi idea de viajar con amigos se complicaba por la otranizacion pero pudimos resolverlo gracias a
-                    ellos un 10/10 el servicio!."</p>
-                <cite>— Irene Quiroga</cite>
-            </article>
-            <article class="comentario">
-                <p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p>
-                <cite>— Mauro Nanda</cite>
-            </article>
-            <!-- Para esta seccion de comentarios de turistas, Preferentemente agregar estrellitas de puntuacion o algo similar -->
+            <!-- Carrusel CSS Puro -->
+            <div class="carousel-css">
+                <div class="carousel-track">
+                    <!-- Set Original de 5 comentarios con estrellas -->
+                    <article class="comentario"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p><cite>— Siomara Venicio</cite></article>
+                    <article class="comentario"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p><cite>— Gabriel Calisaya</cite></article>
+                    <article class="comentario"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Precios super accesibles recomendadisimo!"</p><cite>— Sofia Verdeja</cite></article>
+                    <article class="comentario"><div class="estrellas">⭐⭐⭐⭐</div><p>"La organización fue impecable. Pudimos resolver todo genial para mis amigos. Un 10/10."</p><cite>— Irene Quiroga</cite></article>
+                    <article class="comentario"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p><cite>— Mauro Nanda</cite></article>
+                    
+                    <!-- Doblamos el Set para hacer funcionar el truco del Loop infinito de CSS -->
+                    <article class="comentario" aria-hidden="true"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p><cite>— Siomara Venicio</cite></article>
+                    <article class="comentario" aria-hidden="true"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p><cite>— Gabriel Calisaya</cite></article>
+                    <article class="comentario" aria-hidden="true"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Precios super accesibles recomendadisimo!"</p><cite>— Sofia Verdeja</cite></article>
+                    <article class="comentario" aria-hidden="true"><div class="estrellas">⭐⭐⭐⭐</div><p>"La organización fue impecable. Pudimos resolver todo genial para mis amigos. Un 10/10."</p><cite>— Irene Quiroga</cite></article>
+                    <article class="comentario" aria-hidden="true"><div class="estrellas">⭐⭐⭐⭐⭐</div><p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p><cite>— Mauro Nanda</cite></article>
+                </div>
+            </div>
         </section>
-        <section id="invitacion-blog">
-            <h2>Enterate de las últimas novedades</h2>
-            <p>En nuestro blog compartimos consejos, guías de viaje y las mejores anécdotas de nuestros exploradores.
-            </p>
+
+        <section id="invitacion-blog" class="seccion-blog-fade">
+            <div class="seccion-header">
+                <h2>Enterate de las últimas novedades</h2>
+                <p>En nuestro blog compartimos consejos, guías de viaje y anécdotas imperdibles.</p>
+            </div>
 
             <article class="preview-blog">
                 <img src="images/index/blog.jpeg" alt="Imagen miniatura del blog">
-                <h3>5 tips para armar tu valija como un experto</h3>
-                <p>No sufras más con el espacio. Te enseñamos a optimizar cada rincón de tu equipaje...</p>
-                <a href="blog.html">Leer más entradas en el blog</a>
+                <div class="preview-blog-content">
+                    <h3>5 tips para armar tu valija como un experto</h3>
+                    <p>No sufras más con el espacio. Te enseñamos a optimizar cada rincón de tu equipaje, así podés llevar más recuerdos y menos arrugas a tu vuelta desde la Quebrada.</p>
+                    <a href="blog.html" class="btn-secundario">Leer más entradas en el blog</a>
+                </div>
             </article>
-            <!-- Seccion de invitacion a leer nuestro blog agregar el estilo a gusto, preferentemente con un diseño Scroll Reveal o Fade-in on Scroll-->
         </section>
     </main>
     <footer class="footer-global">
