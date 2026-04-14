@@ -7,6 +7,7 @@
     <title>Turismo | Home</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -103,10 +104,32 @@
         </div>
     </header>
     <main>
-        <section class="Hero">
-            <h1>Bienvenido a Turismo</h1>
-            <p>Descubre los mejores destinos, ofertas y consejos para tus próximas vacaciones.</p>
-            <!-- Para el Hero poner las imagenes de fondo con el texto puesto con css nomas dejo subida las dos imagenes en la carpeta image/index. preferentemente usar efecto carrousel para las imagenes aunque solo son 2 -->
+        <!-- Hero con Video -->
+        <section class="hero-video">
+            <!-- NOTA PARA MAURO: Recordá colocar un archivo mp4 en la carpeta images/index/, por ahora dejo un video placeholder de Pexels -->
+            <video autoplay loop muted playsinline aria-hidden="true" poster="images/index/viaje-norte.jpeg">
+                <source src="https://videos.pexels.com/video-files/5243122/5243122-hd_1920_1080_30fps.mp4" type="video/mp4">
+            </video>
+            
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
+                <h1>Explorá la magia<br>del Norte Argentino</h1>
+                <p>Descubrí paisajes inolvidables en Jujuy. Cultura, historia y aventura te esperan en cada rincón de la Quebrada y la Puna.</p>
+                <a href="destinos.html" class="btn-hero">Ver Destinos</a>
+            </div>
+        </section>
+
+        <!-- Contador numérico animado puro CSS -->
+        <section id="estadisticas" class="estadisticas-container">
+            <div class="stat-item">
+                <span class="counter-viajeros"></span>
+                <span class="label">Visitantes Felices</span>
+            </div>
+            <div class="stat-item">
+                <span class="counter-destinos"></span>
+                <span class="label">Destinos Increíbles</span>
+            </div>
         </section>
 
         <section id="beneficios-turismo">
