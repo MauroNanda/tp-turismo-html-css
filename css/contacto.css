@@ -1,162 +1,201 @@
 /* =============================================
    TURISMO TP — contacto.css
-   Estilos de la página de Contacto
+   Layout de 2 columnas, Formulario y Validaciones
    ============================================= */
 
-/* Los colores y variables globales están en global.css */
-
-main {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-#contacto-header, #formulario-seccion, #datos-contacto {
-    background: var(--blanco);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-h2, h3 {
-    color: var(--verde-unju);
-    margin-top: 0;
-}
-
-#contacto-header {
+/* ================= 1. HEADER DE CONTACTO ================= */
+.contacto-header-sec {
     text-align: center;
+    padding: 60px 30px 40px;
 }
 
-#formulario-seccion form {
+.contacto-header-sec h1 {
+    font-size: 2.5rem;
+    color: var(--verde-unju);
+    margin-bottom: 15px;
+}
+
+.contacto-header-sec p {
+    font-size: 1.1rem;
+    color: var(--color-texto-principal);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ================= 2. GRID PRINCIPAL (2 COLUMNAS) ================= */
+.contacto-grid-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 30px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .contacto-grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= 3. TARJETAS (FORMULARIO E INFO) ================= */
+.formulario-card, 
+.info-card {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(0,0,0,0.05); /* Separa en Dark Mode */
+}
+
+.formulario-card h2, 
+.info-card h2 {
+    color: var(--verde-unju);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--color-fondo);
+    padding-bottom: 10px;
+}
+
+/* ================= 4. FORMULARIO Y VALIDACIONES CSS-ONLY ================= */
+.form-turismo {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .campo {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    gap: 8px;
+    position: relative;
 }
 
 .campo label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-texto-principal);
 }
 
-.campo input, .campo select, .campo textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    font-family: inherit;
-}
-
-.campo input:focus, .campo textarea:focus {
+.campo input, 
+.campo select, 
+.campo textarea {
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: var(--radio-chico);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    font-size: 1rem;
+    transition: all 0.3s ease;
     outline: none;
-    border-color: var(--verde-unju);
 }
 
-button[type="submit"] {
+/* ESTADO: FOCUS STANDARD */
+.campo input:focus, 
+.campo select:focus, 
+.campo textarea:focus {
+    border-color: var(--verde-unju);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+/* === REQUISITO EVALUATIVO: VALIDACIÓN CSS ESTADO CORRECTO (:valid) === */
+/* Si completó bien (correo con @, texto sin nros, etc) borde verde. */
+.campo input:required:valid,
+.campo textarea:required:valid,
+.campo select:required:valid {
+    border-color: #10b981; 
+    background-color: rgba(16, 185, 129, 0.05);
+}
+
+/* === REQUISITO EVALUATIVO: VALIDACIÓN CSS ESTADO INCORRECTO (:invalid) === */
+/* 
+Truco: not(:placeholder-shown) evita que los campos arranquen en modo error (Rojo).
+Solo se va a poner rojo si el usuario empieza a tipear mal o deja por la mitad. 
+*/
+.campo input:required:invalid:not(:placeholder-shown),
+.campo textarea:required:invalid:not(:placeholder-shown) {
+    border-color: #ef4444; 
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* Pseudo-elemento hint para campos erróneos */
+.campo input:required:invalid:not(:placeholder-shown) ~ .error-icon::after {
+    content: "⚠️ Formato inválido";
+    color: #ef4444;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+/* ================= 5. BOTÓN ENVIAR ================= */
+.btn-enviar {
     background-color: var(--verde-unju);
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-    width: 100%;
-}
-
-button[type="submit"]:hover {
-    background-color: var(--verde-hover);
-}
-
-#datos-contacto {
-    display: grid;
-    grid-template-columns: 1fr 240px;
-    gap: 40px;
-    align-items: start;
-}
-
-.info-columna {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.info-fila {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 20px;
-    align-items: baseline;
-}
-
-.info-fila h3 {
+    padding: 15px 20px;
     font-size: 1.1rem;
-    margin: 0;
+    font-weight: 700;
+    border-radius: var(--radio-chico);
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+    border: none;
 }
 
-.info-contenido {
-    line-height: 1.6;
+.btn-enviar:hover {
+    background-color: var(--verde-hover);
+    transform: translateY(-2px);
 }
 
-.info-contenido p, .info-contenido ul {
-    margin: 0;
-}
-
-.info-contenido ul {
-    list-style: none;
-    padding: 0;
-}
-
-.publicidad-contacto {
-    background: #fdfdfd;
-    padding: 20px;
-    border: 2px dashed var(--verde-unju);
-    border-radius: 12px;
+.form-hint {
+    font-size: 0.85rem;
+    color: #888;
     text-align: center;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    margin-top: -5px;
 }
 
-.publicidad-contacto img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 4px;
+/* ================= 6. CARD DE INFO Y MAPA DE GOOGLE ================= */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    color: var(--color-texto-principal);
 }
 
-.publicidad-contacto a {
-    color: var(--verde-unju);
-    text-decoration: none;
-    font-weight: bold;
+.info-icon {
+    font-size: 1.5rem;
+    background: var(--color-fondo);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.info-item strong {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+    color: var(--verde-unju);
 }
 
-@media (max-width: 800px) {
-    #datos-contacto {
-        grid-template-columns: 1fr;
-    }
-
-    .info-fila {
-        grid-template-columns: 1fr;
-        gap: 5px;
-    }
-
-    .publicidad-contacto {
-        width: 100%;
-        margin-top: 10px;
-        box-sizing: border-box;
-    }
+.info-item p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
 }
 
-@media (min-width: 801px) {
-    button[type="submit"] {
-        width: auto;
-        align-self: flex-start;
-    }
+/* Contenedor fluido para Iframe de Google Maps */
+.mapa-responsive-container {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9; /* Obliga al iFrame a mantener forma de TV Widescreen */
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mapa-responsive-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
