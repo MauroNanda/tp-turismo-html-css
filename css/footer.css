@@ -1,0 +1,277 @@
+/* =============================================
+   TURISMO TP — footer.css
+   Rediseño COMPACTO horizontal
+   ============================================= */
+
+/* ---------- FOOTER GLOBAL (COMPACTO) ---------- */
+.footer-global {
+    background-color: var(--color-texto-principal);
+    color: #e8e8e8;
+    padding: 30px 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-global p,
+.footer-global span,
+.footer-global li {
+    color: #e8e8e8;
+    font-size: 14px;
+}
+
+.footer-global a {
+    color: #e8e8e8;
+    font-size: 14px;
+    transition: color var(--transicion-rapida);
+}
+
+.footer-global a:hover {
+    color: var(--color-secundario);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ---------- COLUMNA 1: INFO + NEWSLETTER ---------- */
+.footer-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: #d4d4d4;
+}
+
+.footer-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #c8c8c8;
+}
+
+/* Newsletter INLINE - compacta */
+.footer-compact-newsletter {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.footer-compact-input {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 12px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: var(--radio-chico);
+    background-color: #ffffff;
+    color: #1a1a2e;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color var(--transicion), box-shadow var(--transicion);
+    box-sizing: border-box;
+}
+
+.footer-compact-input::placeholder {
+    color: #777;
+}
+
+.footer-compact-input:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.footer-compact-btn {
+    padding: 8px 16px;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: var(--radio-chico);
+    font-weight: bold;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color var(--transicion-rapida), transform var(--transicion-rapida);
+}
+
+.footer-compact-btn:hover {
+    background-color: var(--color-primario-hover);
+    transform: translateY(-1px);
+}
+
+.footer-compact-btn:active {
+    transform: translateY(0);
+}
+
+/* ---------- COLUMNA 2: NAVEGACIÓN (2 SUB-COLUMNAS) ---------- */
+.footer-nav h3,
+.footer-social h3 {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: var(--color-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-compact-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-compact-links li {
+    margin-bottom: 6px;
+}
+
+.footer-compact-links li a {
+    color: #c8c8c8;
+    font-size: 14px;
+    transition: color var(--transicion-rapida);
+    display: inline-block;
+}
+
+.footer-compact-links li a:hover {
+    color: var(--color-secundario);
+}
+
+/* ---------- COLUMNA 3: REDES + MAPA (COMPACTO) ---------- */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background var(--transicion), transform 0.2s;
+}
+
+.social-links a:hover {
+    background: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+.social-links svg {
+    width: 18px;
+    height: 18px;
+    fill: #e8e8e8;
+    transition: fill var(--transicion-rapida);
+}
+
+.social-links a:hover svg {
+    fill: #e8e8e8;
+}
+
+.mapa-google iframe {
+    width: 100%;
+    max-width: 280px;
+    height: 120px;
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- FOOTER BOTTOM (COMPACTO) ---------- */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 25px auto 0;
+    padding: 15px 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #a0a0a0;
+    margin: 0;
+}
+
+.footer-bottom a {
+    font-size: 13px;
+    color: var(--color-secundario);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-info {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-global {
+        padding: 25px 0 15px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .footer-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .footer-compact-newsletter {
+        flex-direction: column;
+    }
+
+    .footer-compact-input {
+        min-width: 100%;
+    }
+
+    .footer-compact-btn {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .mapa-google iframe {
+        max-width: 100%;
+        height: 140px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px 0;
+    }
+}
