@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador de Precios - Turismo Jujuy</title>
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/precios.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -49,7 +50,9 @@
                                 <a href="#">Gastronomía Local</a>
                             </div>
                             <div class="mega-column mega-img">
-                                <img src="https://via.placeholder.com/200x150?text=Jujuy" alt="Destino destacado">
+                                <a href="destinos.html" aria-label="Ver todos los destinos">
+                                    <img src="images/index/purmamarca.webp" alt="Destino destacado: Purmamarca" style="border-radius: var(--radio-chico); width: 100%; height: 140px; object-fit: cover; transition: transform 0.3s ease;">
+                                </a>
                             </div>
                         </div>
                     </li>
@@ -116,17 +119,27 @@
                         </tr>
                         <tr class="fila-precio">
                             <td>Guía Local <span class="tooltip-container" data-tooltip="Guías certificados UNJU">i</span></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>❌</td>
+                            <td>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </td>
+                            <td>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </td>
+                            <td>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </td>
+                            <td>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </td>
                         </tr>
                         <tr class="fila-precio">
                             <td>Equipamiento <span class="tooltip-container" data-tooltip="Equipo técnico incluido">i</span></td>
                             <td>Bastones</td>
                             <td>Oxígeno</td>
                             <td>Binoculares</td>
-                            <td>❌</td>
+                            <td>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -137,7 +150,12 @@
     <footer class="footer-global">
         <div class="footer-container">
             <div class="footer-info">
-                <h3>🌎 Turismo Jujuy</h3>
+                <h3 style="display:flex; align-items:center; gap:8px;">
+                    <svg viewBox="0 0 24 24" width="24" height="24" style="fill: var(--verde-unju);">
+                        <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.8 13.8 7.3 10.5 7.3 10.5L2 18h20L14 6z" />
+                    </svg>
+                    Turismo Jujuy
+                </h3>
                 <p>Tu puerta de entrada a los paisajes más increíbles del norte argentino. Explorá la Quebrada, la Puna y los Valles con guías expertos y precios transparentes.</p>
                 <form class="newsletter-form footer-compact-newsletter" action="#" method="post">
                     <input class="footer-compact-input" type="email" placeholder="Tu email" required aria-label="Email para newsletter">

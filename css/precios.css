@@ -1,76 +1,119 @@
 /* =============================================
    TURISMO TP — precios.css
-   Estilos de la página de Precios
+   Estilos de la página de Precios (Tablas estilizdas)
    ============================================= */
-
-/* Los colores y variables globales están en global.css */
 
 .precios-page {
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 20px;
-    font-family: 'Segoe UI', sans-serif;
+    min-height: 70vh;
 }
 
 .intro-precios {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+}
+
+.intro-precios h1 {
+    font-size: 2.5rem;
+    color: var(--verde-unju);
+    margin-bottom: 15px;
+}
+
+.intro-precios p {
+    font-size: 1.1rem;
+    color: var(--color-texto-principal);
+}
+
+/* ================= 1. TABLA COMPARATIVA RESPONSIVE ================= */
+.tabla-section {
+    width: 100%;
 }
 
 .tabla-wrapper {
     overflow-x: auto;
     background: var(--blanco);
-    border-radius: 15px;
+    border-radius: 16px;
     box-shadow: var(--sombra);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     min-width: 800px;
+    text-align: center;
 }
 
+/* Encabezado */
 th {
     background-color: var(--verde-unju);
-    color: var(--blanco);
-    padding: 20px 10px;
-    font-size: 0.95rem;
+    color: #ffffff;
+    padding: 20px 15px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid rgba(0,0,0,0.1);
 }
 
+/* Celdas comunes */
 td {
-    padding: 18px 10px;
-    text-align: center;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 0.9rem;
+    padding: 18px 15px;
+    font-size: 1rem;
+    color: var(--color-texto-principal);
+    border-bottom: 1px solid rgba(128,128,128,0.15);
 }
 
-.fila-precio {
-    transition: background-color 0.2s ease;
+td:first-child {
+    text-align: left;
+    font-weight: 700;
+    color: var(--color-texto-principal);
 }
 
-.fila-precio:hover {
-    background-color: #f1f8e9;
+/* ================= 2. PSEUDO-CLASES REQUERIDAS (CEBRA Y HOVER) ================= */
+tbody tr:nth-child(even) {
+    background-color: rgba(128,128,128,0.03); 
+}
+
+/* Hover de fila completa con transición suave */
+tbody tr {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(76, 175, 80, 0.08); 
     cursor: default;
-    font-weight: bold;
-    color: var(--verde-unju)
 }
 
-/* TOOLTIPS */
+tbody tr:hover td {
+    color: var(--verde-unju);
+    font-weight: 700;
+}
+
+/* ================= 3. TOOLTIPS EDUCATIVOS ================= */
 .tooltip-container {
     background: var(--verde-claro);
     color: white;
-    width: 18px;
-    height: 18px;
-    display: inline-block;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    text-align: center;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
     cursor: help;
     position: relative;
-    margin-left: 5px;
-    line-height: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-left: 8px;
+    /* Evita que afecte el nth-child si el texto resalta */
+    vertical-align: middle; 
 }
 
+/* El cuadro flotante oscuro de Info */
 .tooltip-container::after {
     content: attr(data-tooltip);
     position: absolute;
@@ -78,24 +121,42 @@ td {
     left: 50%;
     transform: translateX(-50%);
     background: var(--color-texto-principal);
-    color: white;
+    color: var(--color-fondo);
     padding: 8px 12px;
-    border-radius: 6px;
-    width: 180px;
+    border-radius: 8px;
+    width: max-content;
+    max-width: 200px;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    line-height: 1.4;
+    z-index: 10;
 }
 
-.tooltip-container:hover::after {
+/* Flechita del tooltip apuntando a la 'i' */
+.tooltip-container::before {
+    content: "";
+    position: absolute;
+    bottom: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--color-texto-principal) transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* Efecto de aparicion en tooltip */
+.tooltip-container:hover::after,
+.tooltip-container:hover::before {
     opacity: 1;
     visibility: visible;
-}
-
-.precios-page {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 20px;
-    min-height: 70vh;
+    transform: translateX(-50%) translateY(-3px);
 }

@@ -7,6 +7,7 @@
     <title>Turismo | Home</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -51,7 +52,9 @@
                                 <a href="#">Gastronomía Local</a>
                             </div>
                             <div class="mega-column mega-img">
-                                <img src="https://via.placeholder.com/200x150?text=Jujuy" alt="Destino destacado">
+                                <a href="destinos.html" aria-label="Ver todos los destinos">
+                                    <img src="images/index/purmamarca.webp" alt="Destino destacado: Purmamarca" style="border-radius: var(--radio-chico); width: 100%; height: 140px; object-fit: cover; transition: transform 0.3s ease;">
+                                </a>
                             </div>
                         </div>
                     </li>
@@ -103,82 +106,159 @@
         </div>
     </header>
     <main>
-        <section class="Hero">
-            <h1>Bienvenido a Turismo</h1>
-            <p>Descubre los mejores destinos, ofertas y consejos para tus próximas vacaciones.</p>
-            <!-- Para el Hero poner las imagenes de fondo con el texto puesto con css nomas dejo subida las dos imagenes en la carpeta image/index. preferentemente usar efecto carrousel para las imagenes aunque solo son 2 -->
+        <!-- Hero con Video -->
+        <section class="hero-video">
+            <video autoplay loop muted playsinline aria-hidden="true" poster="images/index/viaje-norte.jpeg">
+                <source src="https://videos.pexels.com/video-files/5243122/5243122-hd_1920_1080_30fps.mp4"
+                    type="video/mp4">
+            </video>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <h1>Explorá la magia<br>del Norte Argentino</h1>
+                <p>Descubrí paisajes inolvidables en Jujuy. Cultura, historia y aventura te esperan en cada rincón de la
+                    Quebrada y la Puna.</p>
+                <a href="destinos.html" class="btn-hero">Ver Destinos</a>
+            </div>
         </section>
 
-        <section id="beneficios-turismo">
-            <h2>¿Por qué elegir viajar con nosotros?</h2>
-            <p>Te ofrecemos la mejor experiencia en cada paso de tu aventura.</p>
-            <article class="tarjeta-beneficio">
-                <img src="images/index/transporte.jpeg" alt="Icono de seguridad">
-                <h3>Seguridad Garantizada</h3>
-                <p>Contamos con seguros de viaje integrales y asistencia las 24 horas.</p>
-            </article>
-
-            <article class="tarjeta-beneficio">
-                <img src="images/index/guia.jpeg" alt="Icono de guía">
-                <h3>Guías Expertos</h3>
-                <p>Nuestros guías locales conocen cada rincón y te llevarán a lugares exclusivos.</p>
-            </article>
-
-            <article class="tarjeta-beneficio">
-                <img src="images/index/precios.jpeg" alt="Icono de precio">
-                <h3>Precios Transparentes</h3>
-                <p>Sin cargos ocultos. El precio que ves es el precio final.</p>
-            </article>
-            <!-- La seccion de aca que sea vertical, separado en 3 cards de manera horizontal, le puse el mismo nombre de clase por que asi se trabaja por igual en los 3 articulos-->
+        <!-- Contador numérico animado puro CSS -->
+        <section id="estadisticas" class="estadisticas-container">
+            <div class="stat-item">
+                <span class="counter-viajeros"></span>
+                <span class="label">Visitantes Felices</span>
+            </div>
+            <div class="stat-item">
+                <span class="counter-destinos"></span>
+                <span class="label">Destinos Increíbles</span>
+            </div>
         </section>
-        <section id="testimonios">
-            <h2>Lo que dicen nuestros viajeros</h2>
 
-            <article class="comentario">
-                <p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p>
-                <cite>— Siomara Venicio</cite>
-            </article>
+        <section id="destinos-destacados" class="seccion-destacada">
+            <div class="seccion-header">
+                <h2>Destinos Destacados</h2>
+                <p>Descubrí los rincones fascinantes que hacen única a nuestra provincia.</p>
+            </div>
 
-            <article class="comentario">
-                <p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p>
-                <cite>— Gabriel Calisaya</cite>
-            </article>
+            <div class="destinos-grid">
+                <article class="tarjeta-destino">
+                    <img src="images/index/purmamarca.webp" alt="Cerro de los 7 Colores en Purmamarca">
+                    <div class="tarjeta-body">
+                        <h3>Purmamarca</h3>
+                        <p>Maravíllate con el Cerro de los 7 Colores y recorré sus encantadoras callecitas de tierra con
+                            historias vivas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-destino">
+                    <img src="images/index/salinas.webp" alt="Salinas Grandes">
+                    <div class="tarjeta-body">
+                        <h3>Salinas Grandes</h3>
+                        <p>Caminá sobre este inmenso desierto blanco de altura y sacate las fotos más creativas de tu
+                            estadía en Jujuy.</p>
+                    </div>
+                </article>
 
-            <article class="comentario">
-                <p>"Precios super accesibles recomendadisimo!"</p>
-                <cite>— Sofia Verdeja</cite>
-            </article>
-
-            <article class="comentario">
-                <p>"Mi idea de viajar con amigos se complicaba por la otranizacion pero pudimos resolverlo gracias a
-                    ellos un 10/10 el servicio!."</p>
-                <cite>— Irene Quiroga</cite>
-            </article>
-            <article class="comentario">
-                <p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p>
-                <cite>— Mauro Nanda</cite>
-            </article>
-            <!-- Para esta seccion de comentarios de turistas, Preferentemente agregar estrellitas de puntuacion o algo similar -->
+                <article class="tarjeta-destino">
+                    <img src="images/index/yungas.webp" alt="Parque Nacional Calilegua">
+                    <div class="tarjeta-body">
+                        <h3>Selva de las Yungas</h3>
+                        <p>Adentrate en la selva subtropical del Parque Nacional Calilegua, llena de biodiversidad,
+                            cascadas y senderos ocultos.</p>
+                    </div>
+                </article>
+            </div>
         </section>
-        <section id="invitacion-blog">
-            <h2>Enterate de las últimas novedades</h2>
-            <p>En nuestro blog compartimos consejos, guías de viaje y las mejores anécdotas de nuestros exploradores.
-            </p>
+
+        <section id="testimonios" class="seccion-testimonios">
+            <div class="seccion-header">
+                <h2>Lo que dicen nuestros viajeros</h2>
+                <p>Opiniones reales de quienes vivieron la experiencia jujuyeña.</p>
+            </div>
+
+            <!-- Carrusel CSS Puro -->
+            <div class="carousel-css">
+                <div class="carousel-track">
+                    <!-- Set Original de 5 comentarios con estrellas -->
+                    <article class="comentario">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p><cite>— Siomara Venicio</cite>
+                    </article>
+                    <article class="comentario">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p><cite>— Gabriel
+                            Calisaya</cite>
+                    </article>
+                    <article class="comentario">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Precios super accesibles recomendadisimo!"</p><cite>— Sofia Verdeja</cite>
+                    </article>
+                    <article class="comentario">
+                        <div class="estrellas">⭐⭐⭐⭐</div>
+                        <p>"La organización fue impecable. Pudimos resolver todo genial para mis amigos. Un 10/10."</p>
+                        <cite>— Irene Quiroga</cite>
+                    </article>
+                    <article class="comentario">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p><cite>—
+                            Mauro Nanda</cite>
+                    </article>
+
+                    <!-- Duplicación de testimonios para loop infinito -->
+                    <article class="comentario" aria-hidden="true">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p><cite>— Siomara Venicio</cite>
+                    </article>
+                    <article class="comentario" aria-hidden="true">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p><cite>— Gabriel
+                            Calisaya</cite>
+                    </article>
+                    <article class="comentario" aria-hidden="true">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Precios super accesibles recomendadisimo!"</p><cite>— Sofia Verdeja</cite>
+                    </article>
+                    <article class="comentario" aria-hidden="true">
+                        <div class="estrellas">⭐⭐⭐⭐</div>
+                        <p>"La organización fue impecable. Pudimos resolver todo genial para mis amigos. Un 10/10."</p>
+                        <cite>— Irene Quiroga</cite>
+                    </article>
+                    <article class="comentario" aria-hidden="true">
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p><cite>—
+                            Mauro Nanda</cite>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="invitacion-blog" class="seccion-blog-fade">
+            <div class="seccion-header">
+                <h2>Enterate de las últimas novedades</h2>
+                <p>En nuestro blog compartimos consejos, guías de viaje y anécdotas imperdibles.</p>
+            </div>
 
             <article class="preview-blog">
                 <img src="images/index/blog.jpeg" alt="Imagen miniatura del blog">
-                <h3>5 tips para armar tu valija como un experto</h3>
-                <p>No sufras más con el espacio. Te enseñamos a optimizar cada rincón de tu equipaje...</p>
-                <a href="blog.html">Leer más entradas en el blog</a>
+                <div class="preview-blog-content">
+                    <h3>5 tips para armar tu valija como un experto</h3>
+                    <p>No sufras más con el espacio. Te enseñamos a optimizar cada rincón de tu equipaje, así podés
+                        llevar más recuerdos y menos arrugas a tu vuelta desde la Quebrada.</p>
+                    <a href="blog.html" class="btn-secundario">Leer más entradas en el blog</a>
+                </div>
             </article>
-            <!-- Seccion de invitacion a leer nuestro blog agregar el estilo a gusto, preferentemente con un diseño Scroll Reveal o Fade-in on Scroll-->
         </section>
     </main>
     <footer class="footer-global">
         <div class="footer-container">
             <!-- Columna 1: Info + Newsletter -->
             <div class="footer-info">
-                <h3>🌎 Turismo Jujuy</h3>
+                <h3 style="display:flex; align-items:center; gap:8px;">
+                    <svg viewBox="0 0 24 24" width="24" height="24" style="fill: var(--verde-unju);">
+                        <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.8 13.8 7.3 10.5 7.3 10.5L2 18h20L14 6z" />
+                    </svg>
+                    Turismo Jujuy
+                </h3>
                 <p>Tu puerta de entrada a los paisajes más increíbles del norte argentino. Explorá la Quebrada, la Puna
                     y los Valles con guías expertos y precios transparentes.</p>
                 <form class="newsletter-form footer-compact-newsletter" action="#" method="post">
