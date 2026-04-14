@@ -5,8 +5,8 @@
 
 /* ---------- FOOTER GLOBAL (COMPACTO) ---------- */
 .footer-global {
-    background-color: var(--color-texto-principal);
-    color: #e8e8e8;
+    background-color: var(--footer-bg);
+    color: var(--footer-texto);
     padding: 30px 0 20px;
     font-family: 'Segoe UI', sans-serif;
     box-sizing: border-box;
@@ -16,12 +16,12 @@
 .footer-global p,
 .footer-global span,
 .footer-global li {
-    color: #e8e8e8;
+    color: var(--footer-texto);
     font-size: 14px;
 }
 
 .footer-global a {
-    color: #e8e8e8;
+    color: var(--footer-texto);
     font-size: 14px;
     transition: color var(--transicion-rapida);
 }
@@ -41,17 +41,17 @@
 }
 
 /* ---------- COLUMNA 1: INFO + NEWSLETTER ---------- */
-.footer-info h2 {
+.footer-info h3 {
     font-size: 1.2rem;
     margin-bottom: 6px;
-    color: #d4d4d4;
+    color: var(--footer-titulo);
 }
 
 .footer-info p {
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 12px;
-    color: #c8c8c8;
+    color: var(--footer-texto-suave);
 }
 
 /* Newsletter INLINE - compacta */
@@ -77,7 +77,7 @@
 }
 
 .footer-compact-input::placeholder {
-    color: #777;
+    color: var(--footer-placeholder);
 }
 
 .footer-compact-input:focus {
@@ -133,7 +133,7 @@
 }
 
 .footer-compact-links li a {
-    color: #c8c8c8;
+    color: var(--footer-texto-suave);
     font-size: 14px;
     transition: color var(--transicion-rapida);
     display: inline-block;
@@ -175,12 +175,12 @@
 .social-links svg {
     width: 18px;
     height: 18px;
-    fill: #e8e8e8;
+    fill: var(--footer-texto);
     transition: fill var(--transicion-rapida);
 }
 
 .social-links a:hover svg {
-    fill: #e8e8e8;
+    fill: var(--footer-texto);
 }
 
 .mapa-google iframe {
@@ -207,7 +207,7 @@
 
 .footer-bottom p {
     font-size: 13px;
-    color: #a0a0a0;
+    color: var(--footer-muted);
     margin: 0;
 }
 

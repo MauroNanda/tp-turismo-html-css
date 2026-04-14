@@ -77,6 +77,12 @@ select {
     --verde-claro: var(--color-secundario);
     --gris-fondo: var(--color-fondo);
     --blanco: var(--color-blanco);
+    --footer-bg: #2c3e50;
+    --footer-texto: #e8e8e8;
+    --footer-texto-suave: #c8c8c8;
+    --footer-titulo: #d4d4d4;
+    --footer-muted: #a0a0a0;
+    --footer-placeholder: #777;
 
     /* Sombras y efectos reutilizables */
     --sombra: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -114,6 +120,12 @@ select {
         --color-blanco: #16213e;
         --color-primario: #2e7d32;
         --color-primario-hover: #4caf50;
+        --footer-bg: #0f0f23;
+        --footer-texto: #d0d0d0;
+        --footer-texto-suave: #b0b0b0;
+        --footer-titulo: #c0c0c0;
+        --footer-muted: #888;
+        --footer-placeholder: #666;
     }
 
     body {
@@ -129,6 +141,12 @@ select {
     --color-blanco: #16213e;
     --color-primario: #2e7d32;
     --color-primario-hover: #4caf50;
+    --footer-bg: #0f0f23;
+    --footer-texto: #d0d0d0;
+    --footer-texto-suave: #b0b0b0;
+    --footer-titulo: #c0c0c0;
+    --footer-muted: #888;
+    --footer-placeholder: #666;
 }
 
 /* ---------- UTILIDADES GLOBALES ---------- */

@@ -134,6 +134,13 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Mega menú más chico para Agencias y Precios */
+.mega-menu-small {
+    width: 340px;
+    grid-template-columns: 1fr 1fr;
+    left: -50px;
+}
+
 /* ================= DARK MODE TOGGLE (CSS ONLY) ================= */
 .theme-toggle {
     cursor: pointer;
@@ -163,12 +170,20 @@
 
 /* Reglas Globales de Modo Oscuro activadas por checkbox (Sin JS) */
 :root:has(#dark-mode-toggle:checked) {
-    --color-fondo: #121212;
-    --color-texto-principal: #e0e0e0;
-    --color-blanco: #1e1e1e;
-    --gris-fondo: #2c2c2c;
-    --verde-unju: #81c784;
+    --color-fondo: #1a1a2e;
+    --color-texto-principal: #e8e8e8;
+    --color-blanco: #16213e;
+    --color-primario: #2e7d32;
+    --color-primario-hover: #4caf50;
+    --verde-unju: #2e7d32;
     --verde-claro: #4caf50;
+    --gris-fondo: #16213e;
+    --footer-bg: #0f0f23;
+    --footer-texto: #d0d0d0;
+    --footer-texto-suave: #b0b0b0;
+    --footer-titulo: #c0c0c0;
+    --footer-muted: #888;
+    --footer-placeholder: #666;
 }
 
 :root:has(#dark-mode-toggle:checked) body {
