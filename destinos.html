@@ -6,12 +6,67 @@
     <title>Turismo | Destinos en Jujuy</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body id="destinos-page">
+    <!-- Toggles Ocultos CSS-Only -->
+    <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+    <input type="checkbox" id="menu-toggle" class="sr-only menu-toggle-check">
+    
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" class="logo-svg">
+                    <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.8 13.8 7.3 10.5 7.3 10.5L2 18h20L14 6z"/>
+                </svg>
+                Turismo Jujuy
+            </a>
 
-    <header>
-        <p>Pegar aqui el link del header cuando esté listo</p>
+            <label for="menu-toggle" class="menu-btn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="has-dropdown">
+                        <a href="destinos.html">Destinos <span class="arrow">▼</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-column">
+                                <h4>Regiones</h4>
+                                <a href="destinos.html#quebrada">Quebrada de Humahuaca</a>
+                                <a href="destinos.html#puna">La Puna</a>
+                                <a href="destinos.html#yungas">Selva de las Yungas</a>
+                                <a href="destinos.html#valles">Valles Templados</a>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Experiencias</h4>
+                                <a href="#">Aventura Extrema</a>
+                                <a href="#">Cultura y Tradición</a>
+                                <a href="#">Gastronomía Local</a>
+                            </div>
+                            <div class="mega-column mega-img">
+                                <img src="https://via.placeholder.com/200x150?text=Jujuy" alt="Destino destacado">
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <label for="dark-mode-toggle" class="theme-toggle" aria-label="Cambiar tema oscuro/claro">
+                        <span class="icon-sun">☀️</span>
+                        <span class="icon-moon">🌙</span>
+                    </label>
+                </div>
+            </nav>
+        </div>
     </header>
 
    <main>
