@@ -44,13 +44,6 @@ body {
     min-height: 100vh;
 }
 
-body:has(#dark-mode-toggle:checked) {
-    --color-fondo: #1a1a2e;
-    --color-texto-principal: #e8e8e8;
-    --color-blanco: #16213e;
-    --verde-unju: #4caf50;
-    --blanco: #16213e; /* Forzamos el alias aquí también */
-}
 
 main {
     flex: 1;
@@ -137,19 +130,6 @@ select {
     --fs-h1: 2rem;
 }
 
-/* ---------- CLASE DARK-THEME ---------- */
-/* ---------- LÓGICA DE MODO OSCURO (VINCULADA AL CHECKBOX) ---------- */
-body:has(#dark-mode-toggle:checked) {
-    --color-fondo: #1a1a2e;
-    --color-texto-principal: #e8e8e8;
-    --color-blanco: #16213e;
-    --color-primario: #4caf50;
-    --color-primario-hover: #66bb6a;
-    /* Actualizamos los aliases para que agencias.css los use */
-    --blanco: var(--color-blanco);
-    --verde-unju: var(--color-primario);
-    --gris-fondo: var(--color-fondo);
-}
 
 /* ---------- UTILIDADES GLOBALES ---------- */
 .sr-only {

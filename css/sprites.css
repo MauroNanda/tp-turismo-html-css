@@ -1,0 +1,22 @@
+/* =============================================
+   TURISMO TP — sprites.css
+   Sprite CSS para iconos de redes sociales
+   (Completado en Tarea 8)
+   ============================================= */
+
+/* Clase base para iconos sprite */
+.social-icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url('../images/sprites/social-sprite.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+/* Posiciones individuales — Completar en Tarea 8 con la imagen real */
+/*
+.icon-facebook  { background-position: 0 0; }
+.icon-instagram { background-position: -32px 0; }
+.icon-twitter   { background-position: -64px 0; }
+*/
