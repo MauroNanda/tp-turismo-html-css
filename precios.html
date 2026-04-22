@@ -78,11 +78,10 @@
             <h1>Tarifas de Destinos 2026</h1>
             <p>Comparativa detallada por regiones de la provincia de Jujuy.</p>
         </section>
-
-        <section class="tabla-section">
-            <div class="tabla-wrapper" role="region" aria-label="Comparativa de precios" tabindex="0">
-                <table>
-                    <thead>
+        <section class="tabla-section container my-">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle shadow-sm" id="tabla-precios">
+                    <thead class="table-dark">
                         <tr>
                             <th>Servicios</th>
                             <th>Quebrada ($75k)</th>
@@ -92,48 +91,65 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="fila-precio">
-                            <td>Traslados <span class="tooltip-container" data-tooltip="Desde San Salvador de Jujuy">i</span></td>
+                        <tr>
+                            <td>
+                                Traslados <i class="fa-solid fa-circle-info text-primary ms-1"
+                                             data-bs-toggle="tooltp"
+                                             title="Desde San Salvador de Jujuy"></i>
+                            </td>
                             <td>Privado</td>
                             <td>4x4 Especial</td>
                             <td>Grupal</td>
                             <td>Grupal</td>
                         </tr>
-                        <tr class="fila-precio">
-                            <td>Alojamiento <span class="tooltip-container" data-tooltip="Hoteles certificados">i</span></td>
+                        <tr>
+                            <td>
+                                Alojamiento <i class="fa-solid fa-circle-info text-primary ms-1"
+                                             data-bs-toggle="tooltp"
+                                             title="Hoteles certificados"></i>
+                                            </td>
                             <td>Boutique</td>
                             <td>Hostería</td>
                             <td>Ecolodge</td>
                             <td>Hotel 3*</td>
                         </tr>
-                        <tr class="fila-precio">
-                            <td>Guía Local <span class="tooltip-container" data-tooltip="Guías certificados UNJU">i</span></td>
+                        <tr>
                             <td>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Guía Local <i class="fa-solid fa-circle-info text-primary ms-1"
+                                             data-bs-toggle="tooltp"
+                                             title="Guías certificados UNJU"></i>
                             </td>
                             <td>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <i class="fa-solid fa-check text-success fs-5"></i>
                             </td>
                             <td>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <i class="fa-solid fa-check text-success fs-5"></i>
                             </td>
                             <td>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                <i class="fa-solid fa-check text-success fs-5"></i>
+                            </td>
+                            <td>
+                                <i class="fa-solid fa-xmark text-danger fs-5"></i>
                             </td>
                         </tr>
-                        <tr class="fila-precio">
-                            <td>Equipamiento <span class="tooltip-container" data-tooltip="Equipo técnico incluido">i</span></td>
+                        <tr>
+                            <td>
+                                Equipamiento <i class="fa-solid fa-circle-info text-primary ms-1"
+                                             data-bs-toggle="tooltp"
+                                             title="Equipo técnico incluido"></i>
+                            </td>
                             <td>Bastones</td>
                             <td>Oxígeno</td>
                             <td>Binoculares</td>
                             <td>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                <i class="fa-solid fa-xmark text-danger fs-5"></i>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+        <script src="js/precios.js"></script>
     </main>
 
     <footer class="footer-global">
