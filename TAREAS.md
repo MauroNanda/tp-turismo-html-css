@@ -46,7 +46,7 @@ Archivos:
 - css/index.css (modificar)
 - js/home.js (nuevo)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
