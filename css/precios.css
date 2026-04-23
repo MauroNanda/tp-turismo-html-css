@@ -140,3 +140,17 @@ body {
     overflow-x: hidden;
     width: 100%;
 }
+
+/* ================= 4. DARK MODE LOCAL PARA LA TABLA ================= */
+:root:has(#dark-mode-toggle:checked) .table {
+    --bs-table-color: var(--color-texto-principal);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: rgba(255, 255, 255, 0.1);
+    --bs-table-hover-color: var(--verde-unju);
+    --bs-table-hover-bg: rgba(76, 175, 80, 0.1);
+}
+
+:root:has(#dark-mode-toggle:checked) td, 
+:root:has(#dark-mode-toggle:checked) th {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
