@@ -23,7 +23,7 @@ $(document).ready(function() {
             $(this).toggleClass('fas', index < guardado).toggleClass('far', index >= guardado);
         });
     });
-
+ 
     $('.rating-estrellas i').on('click', function() {
         let val = $(this).data('value');
         $(this).parent().data('rating', val);
