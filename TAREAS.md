@@ -67,7 +67,7 @@ Archivos:
 - css/destinos.css (modificar)
 - js/destinos.js (nuevo)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
@@ -108,7 +108,7 @@ Archivos:
 - css/precios.css (modificar)
 - js/precios.js (nuevo)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
