@@ -20,11 +20,6 @@ main {
     color: var(--color-texto-principal);
 }
 
-/* --- LÓGICA DE FILTRADO --- */
-main > input[type="radio"] {
-    display: none;
-}
-
 .filtros-destinos {
     display: flex;
     justify-content: center;
@@ -32,16 +27,6 @@ main > input[type="radio"] {
     margin-bottom: 40px;
 }
 
-.filtros-destinos label {
-    padding: 8px 20px;
-    background: var(--color-blanco);
-    border: 2px solid var(--verde-unju);
-    color: var(--verde-unju);
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
 @media (max-width: 768px) {
     .filtros-destinos {
         justify-content: flex-start; /* Alinea al inicio */
@@ -50,36 +35,10 @@ main > input[type="radio"] {
         gap: 10px;
         -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
     }
-
-    .filtros-destinos label {
-        white-space: nowrap;         /* Evita que el texto se parta en dos líneas */
-        flex-shrink: 0;              /* Evita que los botones se achiquen */
-    }
-}
-
-/* Selección de filtros */
-#todos:checked ~ .filtros-destinos label[for="todos"],
-#paisaje:checked ~ .filtros-destinos label[for="paisaje"],
-#aventura:checked ~ .filtros-destinos label[for="aventura"],
-#cultura:checked ~ .filtros-destinos label[for="cultura"],
-#historia:checked ~ .filtros-destinos label[for="historia"] {
-    background: var(--verde-unju);
-    color: white;
-}
-
-/* Lógica de visibilidad */
-#paisaje:checked ~ #galeria-destinos .tarjeta-destino:not(.paisaje),
-#aventura:checked ~ #galeria-destinos .tarjeta-destino:not(.aventura),
-#cultura:checked ~ #galeria-destinos .tarjeta-destino:not(.cultura),
-#historia:checked ~ #galeria-destinos .tarjeta-destino:not(.historia) {
-    display: none;
 }
 
 /* --- TARJETAS --- */
 #galeria-destinos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
     margin-bottom: 60px;
 }
 
@@ -88,9 +47,10 @@ main > input[type="radio"] {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--sombra);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease; /* Cambié transform por all para que sea más fluido */
     display: flex;
     flex-direction: column;
+    height: 100%; /* Obliga a todas las tarjetas a medir lo mismo */
 }
 
 .tarjeta-destino:hover {
@@ -105,7 +65,8 @@ main > input[type="radio"] {
     transition: transform 0.5s ease;
 }
 
-.tarjeta-destino:hover img {
+/* Esta es la clase que usa destinos.js para el zoom */
+.zoom-animacion img {
     transform: scale(1.1);
 }
 
@@ -113,7 +74,7 @@ main > input[type="radio"] {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 1; /* Esto hace que el cuerpo de la tarjeta crezca */
 }
 
 .info-destino h3 {
@@ -129,7 +90,7 @@ main > input[type="radio"] {
 }
 
 .categoria {
-    background: rgba(46, 125, 50, 0.15); /* Fondo dinámico */
+    background: rgba(46, 125, 50, 0.15);
     color: var(--verde-unju);
     font-size: 0.75rem;
     font-weight: bold;
@@ -140,6 +101,7 @@ main > input[type="radio"] {
 }
 
 .boton-detalle {
+    margin-top: auto; /* Truco: empuja el botón siempre al fondo de la tarjeta */
     text-align: center;
     background-color: var(--verde-unju);
     color: white;
@@ -235,19 +197,6 @@ main > input[type="radio"] {
         -webkit-overflow-scrolling: touch;
     }
 
-    .filtros-destinos label {
-        white-space: nowrap;
-        flex-shrink: 0;
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-
-    /* 3. Galeria: Forzamos a que las tarjetas bajen de tamaño */
-    #galeria-destinos {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 20px;
-    }
-
     /* 4. Mapa: Que ocupe el ancho total */
     .mapa-container {
         max-width: 100%;
@@ -268,4 +217,63 @@ main > input[type="radio"] {
         width: 100%;
         max-width: 280px;
     }
+}
+
+@media (min-width: 992px) {
+    /* 1. Abrimos los menús al pasar el mouse */
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: flex !important; /* Para Destinos */
+        gap: 20px;
+        padding: 20px;
+        width: auto;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* 2. Ajuste para los menús pequeños (Agencia/Precios) */
+    .nav-item.dropdown:hover > .mega-menu-small {
+        display: flex !important;
+        gap: 30px;
+    }
+
+    /* 3. EL TRUCO MAESTRO: Anulamos el efecto visual del clic de Bootstrap */
+    /* Cuando Bootstrap pone la clase 'show' por el clic, la obligamos a ser invisible */
+    /* Así el enlace funciona, pero no se dibuja una segunda capa */
+    .dropdown-menu.show {
+        display: none !important;
+    }
+
+    /* 4. Aseguramos que el cursor muestre que es un link */
+    .nav-link.dropdown-toggle {
+        cursor: pointer !important;
+    }
+}
+
+/* --- ESTILOS DE LA TABLA --- */
+#tabla-precios {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 20px; /* Le damos aire interno al contenedor */
+}
+
+/* Forzamos el color verde en el encabezado */
+#tabla-precios .table thead th {
+    background-color: var(--verde-unju) !important;
+    color: white !important;
+    border-color: var(--verde-unju);
+    padding: 15px; /* Encabezados más altos y elegantes */
+}
+
+/* Efecto hover más notable */
+.table-hover tbody tr:hover {
+    background-color: rgba(46, 125, 50, 0.1) !important; 
+    cursor: default;
+}
+
+/* Quitamos los bordes blancos que a veces pone Bootstrap y quedan feos */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 15px; /* Bordes redondeados para la tabla misma */
 }
