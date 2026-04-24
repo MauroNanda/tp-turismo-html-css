@@ -130,7 +130,7 @@ Archivos:
 - css/contacto.css (modificar)
 - js/contacto.js (nuevo, reemplaza script embebido)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
