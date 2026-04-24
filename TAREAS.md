@@ -87,7 +87,7 @@ Archivos:
 - css/agencias.css (modificar)
 - js/agencias.js (nuevo)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
