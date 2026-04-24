@@ -39,8 +39,8 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="destinos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinos</a>
-                            <div class="dropdown-menu mega-menu">
+                            <a class="nav-link dropdown-toggle" href="destinos.html" role="button" aria-expanded="false">Destinos</a>
+                            <div class="dropdown-menu mega-menu menu-destinos">
                                 <div class="mega-column">
                                     <h4>Regiones</h4>
                                     <a class="dropdown-item" href="destinos.html#quebrada">Quebrada de Humahuaca</a>
@@ -62,14 +62,14 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="agencias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agencias</a>
+                            <a class="nav-link dropdown-toggle" href="agencias.html" role="button" aria-expanded="false">Agencias</a>
                             <div class="dropdown-menu mega-menu mega-menu-small">
                                 <div class="mega-column"><h4>Por Tipo</h4><a class="dropdown-item" href="agencias.html">Aventura</a><a class="dropdown-item" href="agencias.html">Cultural</a><a class="dropdown-item" href="agencias.html">Gastronómico</a></div>
                                 <div class="mega-column"><h4>Servicios</h4><a class="dropdown-item" href="agencias.html">Excursiones</a><a class="dropdown-item" href="agencias.html">Viajes Privados</a><a class="dropdown-item" href="agencias.html">Paquetes</a></div>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="precios.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Precios</a>
+                            <a class="nav-link dropdown-toggle" href="precios.html" role="button" aria-expanded="false">Precios</a>
                             <div class="dropdown-menu mega-menu mega-menu-small">
                                 <div class="mega-column"><h4>Regiones</h4><a class="dropdown-item" href="precios.html">Quebrada</a><a class="dropdown-item" href="precios.html">Puna</a><a class="dropdown-item" href="precios.html">Yungas</a></div>
                                 <div class="mega-column"><h4>Planes</h4><a class="dropdown-item" href="precios.html">Individual</a><a class="dropdown-item" href="precios.html">Grupal</a><a class="dropdown-item" href="precios.html">Premium</a></div>
@@ -90,12 +90,6 @@
     </header>
 
     <main>
-        <input type="radio" name="filtro" id="todos" checked>
-        <input type="radio" name="filtro" id="paisaje">
-        <input type="radio" name="filtro" id="aventura">
-        <input type="radio" name="filtro" id="cultura">
-        <input type="radio" name="filtro" id="historia">
-
         <section id="presentacion-destinos">
             <h2>Descubrí la Magia de Jujuy</h2>
             <p>Explorá los colores y la cultura de la Quebrada y la Puna a través de nuestros 9 destinos destacados.</p>
@@ -106,104 +100,208 @@
             </div>
         </section>
 
-        <div class="filtros-destinos">
-            <label for="todos">Todos</label>
-            <label for="paisaje">Paisaje</label>
-            <label for="aventura">Aventura</label>
-            <label for="cultura">Cultura</label>
-            <label for="historia">Historia</label>
+        <div class="filtros-destinos d-flex justify-content-center flex-wrap gap-2 my-4">
+            <button class="btn btn-primary btn-filtro" data-filter="all">Todos</button>
+            <button class="btn btn-outline-primary btn-filtro" data-filter="paisaje">Paisaje</button>
+            <button class="btn btn-outline-primary btn-filtro" data-filter="aventura">Aventura</button>
+            <button class="btn btn-outline-primary btn-filtro" data-filter="cultura">Cultura</button>
+            <button class="btn btn-outline-primary btn-filtro" data-filter="historia">Historia</button>
         </div>
 
-        <section id="galeria-destinos">
-            <article class="tarjeta-destino cultura">
-                <img src="images/destinos/purmamarca.webp" alt="Purmamarca">
-                <div class="info-destino">
-                    <span class="categoria">Cultura</span>
-                    <h3>Purmamarca</h3>
-                    <p>Hogar del icónico Cerro de los Siete Colores y su feria artesanal.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+        <section id="galeria-destinos" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 container mx-auto py-5">
+            <div class="col filter-item cultura">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/purmamarca.webp" alt="Purmamarca">
+                    <div class="info-destino">
+                        <span class="categoria">Cultura</span>
+                        <h3>Purmamarca</h3>
+                        <p>Hogar del icónico Cerro de los Siete Colores y su feria artesanal.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="tarjeta-destino paisaje">
-                <img src="images/destinos/salinas.webp" alt="Salinas Grandes">
-                <div class="info-destino">
-                    <span class="categoria">Paisaje</span>
-                    <h3>Salinas Grandes</h3>
-                    <p>Un desierto de sal blanco infinito a más de 3.000 metros de altura.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+            <div class="col filter-item paisaje">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/salinas.webp" alt="Salinas Grandes">
+                    <div class="info-destino">
+                        <span class="categoria">Paisaje</span>
+                        <h3>Salinas Grandes</h3>
+                        <p>Un desierto de sal blanco infinito a más de 3.000 metros de altura.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
                 </div>
-            </article>
+            </div>
+            
+            <div class="col filter-item aventura">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/hornocal-jujuy.webp" alt="El Hornocal">
+                    <div class="info-destino">
+                        <span class="categoria">Aventura</span>
+                        <h3>El Hornocal</h3>
+                        <p>El majestuoso "Cerro de los 14 Colores" en el corazón de la Quebrada.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col filter-item historia">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/tilcara.webp" alt="Tilcara">
+                    <div class="info-destino">
+                        <span class="categoria">Historia</span>
+                        <h3>Tilcara</h3>
+                        <p>Visitá el Pucará y disfrutá de la movida cultural y las peñas.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
+                </div>
+            </div>
 
-            <article class="tarjeta-destino aventura">
-                <img src="images/destinos/hornocal-jujuy.webp" alt="El Hornocal">
-                <div class="info-destino">
-                    <span class="categoria">Aventura</span>
-                    <h3>El Hornocal</h3>
-                    <p>El majestuoso "Cerro de los 14 Colores" en el corazón de la Quebrada.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+            <div class="col filter-item aventura">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/iruya.webp" alt="Iruya">
+                    <div class="info-destino">
+                        <span class="categoria">Aventura</span>
+                        <h3>Iruya</h3>
+                        <p>Un pueblo colgado de la montaña. El camino es una experiencia única.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="tarjeta-destino historia">
-                <img src="images/destinos/tilcara.webp" alt="Tilcara">
-                <div class="info-destino">
-                    <span class="categoria">Historia</span>
-                    <h3>Tilcara</h3>
-                    <p>Visitá el Pucará y disfrutá de la movida cultural y las peñas.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+            <div class="col filter-item paisaje">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/maimara.webp" alt="Maimará">
+                    <div class="info-destino">
+                        <span class="categoria">Paisaje</span>
+                        <h3>Maimará</h3>
+                        <p>Famoso por "La Paleta del Pintor", montañas de colores vibrantes.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="tarjeta-destino aventura">
-                <img src="images/destinos/iruya.webp" alt="Iruya">
-                <div class="info-destino">
-                    <span class="categoria">Aventura</span>
-                    <h3>Iruya</h3>
-                    <p>Un pueblo colgado de la montaña. El camino es una experiencia única.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+            <div class="col filter-item paisaje">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/termas-reyes.jpg" alt="Reyes">
+                    <div class="info-destino">
+                        <span class="categoria">Paisaje</span>
+                        <h3>Termas de Reyes</h3>
+                        <p>Aguas termales rodeadas de selva y montañas para descansar.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="tarjeta-destino paisaje">
-                <img src="images/destinos/maimara.webp" alt="Maimará">
-                <div class="info-destino">
-                    <span class="categoria">Paisaje</span>
-                    <h3>Maimará</h3>
-                    <p>Famoso por "La Paleta del Pintor", montañas de colores vibrantes.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+            <div class="col filter-item historia">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/laquiaca.webp" alt="La Quiaca">
+                    <div class="info-destino">
+                        <span class="categoria">Historia</span>
+                        <h3>La Quiaca</h3>
+                        <p>El punto más al norte del país, lleno de tradición y comercio andino.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="tarjeta-destino paisaje">
-                <img src="images/destinos/termas-reyes.jpg" alt="Reyes">
-                <div class="info-destino">
-                    <span class="categoria">Paisaje</span>
-                    <h3>Termas de Reyes</h3>
-                    <p>Aguas termales rodeadas de selva y montañas para descansar.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+            <div class="col filter-item cultura">
+                <div class="tarjeta-destino">
+                    <img src="images/destinos/caspala.webp" alt="Caspalá">
+                    <div class="info-destino">
+                        <span class="categoria">Cultura</span>
+                        <h3>Caspalá</h3>
+                        <p>Elegido entre los pueblos más lindos del mundo por la OMT.</p>
+                        <a href="precios.html" class="boton-detalle">Ver paquetes</a>
+                    </div>
                 </div>
-            </article>
+            </div>
+        </section>
 
-            <article class="tarjeta-destino historia">
-                <img src="images/destinos/laquiaca.webp" alt="La Quiaca">
-                <div class="info-destino">
-                    <span class="categoria">Historia</span>
-                    <h3>La Quiaca</h3>
-                    <p>El punto más al norte del país, lleno de tradición y comercio andino.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
-                </div>
-            </article>
+        <section id="tabla-precios" class="container my-5 py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" style="color: var(--verde-unju);">Resumen de Tarifas por Región</h2>
+                <p class="text-muted">Precios base sugeridos para la temporada 2026</p>
+            </div>
 
-            <article class="tarjeta-destino cultura">
-                <img src="images/destinos/caspala.webp" alt="Caspalá">
-                <div class="info-destino">
-                    <span class="categoria">Cultura</span>
-                    <h3>Caspalá</h3>
-                    <p>Elegido entre los pueblos más lindos del mundo por la OMT.</p>
-                    <a href="precios.html" class="boton-detalle">Ver paquetes</a>
-                </div>
-            </article>
+            <div class="table-responsive shadow-lg rounded-4">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="ps-4">Destino</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Servicio Incluido</th>
+                            <th scope="col" class="text-end pe-4">Precio Base (ARS)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-light">
+                            <td colspan="4" class="fw-bold text-success ps-4"><i class="fa-solid fa-mountain-sun me-2"></i> REGIÓN QUEBRADA</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">Purmamarca</td>
+                            <td>10 hs</td>
+                            <td>Traslado y Guía Local</td>
+                            <td class="text-end pe-4 fw-bold">$45.000</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">Tilcara</td>
+                            <td>8 hs</td>
+                            <td>Entrada a Pucará y Museo</td>
+                            <td class="text-end pe-4 fw-bold">$38.000</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">El Hornacal</td>
+                            <td>12 hs</td>
+                            <td>Camioneta 4x4 y Refrigerio</td>
+                            <td class="text-end pe-4 fw-bold">$55.000</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">Iruya</td>
+                            <td>2 Días</td>
+                            <td>Traslado y 1 Noche de Posada</td>
+                            <td class="text-end pe-4 fw-bold">$95.000</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">Maimará</td>
+                            <td>6 hs</td>
+                            <td>Tour Fotográfico Paleta del Pintor</td>
+                            <td class="text-end pe-4 fw-bold">$32.000</td>
+                        </tr>
+
+                        <tr class="table-light">
+                            <td colspan="4" class="fw-bold text-success ps-4"><i class="fa-solid fa-sun me-2"></i> REGIÓN PUNA</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">Salinas Grandes</td>
+                            <td>9 hs</td>
+                            <td>Traslado y Almuerzo de Campo</td>
+                            <td class="text-end pe-4 fw-bold">$60.000</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">La Quiaca</td>
+                            <td>14 hs</td>
+                            <td>City Tour Fronterizo y Almuerzo</td>
+                            <td class="text-end pe-4 fw-bold">$65.000</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">Caspalá</td>
+                            <td>2 Días</td>
+                            <td>Traslado, Guía y Almuerzo Comunitario</td>
+                            <td class="text-end pe-4 fw-bold">$88.000</td>
+                        </tr>
+                        <tr class="table-light">
+                            <td colspan="4" class="fw-bold text-success ps-4"><i class="fa-solid fa-leaf me-2"></i> REGIÓN YUNGAS Y VALLES</td>
+                        </tr>
+                        <tr>
+                            <td class="ps-5">Termas de Reyes</td>
+                            <td>6 hs</td>
+                            <td>Acceso a Pileta y Almuerzo</td>
+                            <td class="text-end pe-4 fw-bold">$35.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <aside id="recomendados-temporada">
@@ -227,8 +325,7 @@
                 <p>Tu puerta de entrada a los paisajes más increíbles del norte argentino. Explorá la Quebrada, la Puna
                     y los Valles con guías expertos y precios transparentes.</p>
                 <form class="newsletter-form footer-compact-newsletter" action="#" method="post">
-                    <input class="footer-compact-input" type="email" placeholder="Tu email" required
-                        aria-label="Email para newsletter">
+                    <input class="footer-compact-input" type="email" placeholder="Tu email" requiredaria-label="Email para newsletter">
                     <button class="footer-compact-btn" type="submit">Suscribirme</button>
                 </form>
             </div>
@@ -279,6 +376,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/destinos.js"></script>
 </body>
 
 </html>
