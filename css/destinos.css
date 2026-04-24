@@ -3,6 +3,9 @@ main {
     max-width: 1100px;
     margin: 40px auto;
     padding: 20px;
+    /* FIX RESPONSIVE: 'width: 100%' asegura que en pantallas chicas no desborde el ancho */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #presentacion-destinos {
@@ -29,11 +32,15 @@ main {
 
 @media (max-width: 768px) {
     .filtros-destinos {
-        justify-content: flex-start; /* Alinea al inicio */
-        overflow-x: auto;            /* Permite scroll horizontal */
-        padding: 10px 20px;          /* Espacio para que no se corte la sombra */
+        justify-content: flex-start;
+        /* Alinea al inicio */
+        overflow-x: auto;
+        /* Permite scroll horizontal */
+        padding: 10px 20px;
+        /* Espacio para que no se corte la sombra */
         gap: 10px;
-        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+        -webkit-overflow-scrolling: touch;
+        /* Scroll suave en iOS */
     }
 }
 
@@ -47,10 +54,12 @@ main {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--sombra);
-    transition: all 0.3s ease; /* Cambié transform por all para que sea más fluido */
+    transition: all 0.3s ease;
+    /* Cambié transform por all para que sea más fluido */
     display: flex;
     flex-direction: column;
-    height: 100%; /* Obliga a todas las tarjetas a medir lo mismo */
+    height: 100%;
+    /* Obliga a todas las tarjetas a medir lo mismo */
 }
 
 .tarjeta-destino:hover {
@@ -74,7 +83,8 @@ main {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Esto hace que el cuerpo de la tarjeta crezca */
+    flex-grow: 1;
+    /* Esto hace que el cuerpo de la tarjeta crezca */
 }
 
 .info-destino h3 {
@@ -101,7 +111,8 @@ main {
 }
 
 .boton-detalle {
-    margin-top: auto; /* Truco: empuja el botón siempre al fondo de la tarjeta */
+    margin-top: auto;
+    /* Truco: empuja el botón siempre al fondo de la tarjeta */
     text-align: center;
     background-color: var(--verde-unju);
     color: white;
@@ -134,7 +145,9 @@ main {
 }
 
 #recomendados-temporada img {
-    width: 250px;
+    /* FIX RESPONSIVE: En lugar de un ancho fijo (250px), dejamos que ocupe el 100% hasta un máximo, así no rompe en celulares */
+    width: 100%;
+    max-width: 250px;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -143,7 +156,8 @@ main {
 #presentacion-destinos {
     text-align: center;
     padding: 60px 20px;
-    max-width: 900px; /* Limitamos el ancho total de la sección */
+    max-width: 900px;
+    /* Limitamos el ancho total de la sección */
     margin: 0 auto;
 }
 
@@ -163,29 +177,35 @@ main {
 .mapa-container {
     position: relative;
     width: 100%;
-    max-width: 700px; /* Aquí controlamos que sea un poco más chico */
+    max-width: 700px;
+    /* Aquí controlamos que sea un poco más chico */
     margin: 0 auto;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra suave para que flote */
-    border: 1px solid rgba(0,0,0,0.1);
-    line-height: 0; /* Quita espacios extra abajo del iframe */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* Sombra suave para que flote */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 0;
+    /* Quita espacios extra abajo del iframe */
 }
 
 #presentacion-destinos iframe {
     width: 100%;
-    height: 450px; /* Altura un poco más equilibrada */
+    height: 450px;
+    /* Altura un poco más equilibrada */
     border: none;
 }
 
 /*SECCIÓN RESPONSIVA*/
 @media (max-width: 768px) {
+
     /* 1. Ajuste del contenedor principal */
     main {
         margin: 10px auto;
         padding: 15px;
         width: 100%;
-        overflow-x: hidden; /* Evita scroll lateral molesto */
+        overflow-x: hidden;
+        /* Evita scroll lateral molesto */
     }
 
     /* 2. Filtros: Ahora se pueden deslizar lateralmente si no caben */
@@ -217,12 +237,40 @@ main {
         width: 100%;
         max-width: 280px;
     }
+
+    /* FIX RESPONSIVE: En móviles el espacio vale oro. Quitamos los márgenes laterales excesivos para que la galería y la tabla se vean bien grandes */
+    #galeria-destinos {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #tabla-precios {
+        padding: 10px 0;
+    }
+
+    /* FIX TABLA: Forzamos un ancho mínimo para que aparezca la barra de scroll de Bootstrap y el texto no se apriete */
+    #tabla-precios .table {
+        min-width: 600px;
+    }
+
+    /* FIX CLAVE: La regla global '.table { overflow: hidden }' fue puesta para bordes redondeados
+       pero en mobile cancela el scroll horizontal de Bootstrap. Hay que revertirla aquí. */
+    .table {
+        overflow: visible;
+    }
+    
+    #tabla-precios th,
+    #tabla-precios td {
+        white-space: nowrap;
+    }
 }
 
 @media (min-width: 992px) {
+
     /* 1. Abrimos los menús al pasar el mouse */
-    .nav-item.dropdown:hover > .dropdown-menu {
-        display: flex !important; /* Para Destinos */
+    .nav-item.dropdown:hover>.dropdown-menu {
+        display: flex !important;
+        /* Para Destinos */
         gap: 20px;
         padding: 20px;
         width: auto;
@@ -231,7 +279,7 @@ main {
     }
 
     /* 2. Ajuste para los menús pequeños (Agencia/Precios) */
-    .nav-item.dropdown:hover > .mega-menu-small {
+    .nav-item.dropdown:hover>.mega-menu-small {
         display: flex !important;
         gap: 30px;
     }
@@ -251,9 +299,11 @@ main {
 
 /* --- ESTILOS DE LA TABLA --- */
 #tabla-precios {
-    background-color: #f8f9fa;
+    /* FIX MODO OSCURO: Cambiamos #f8f9fa por var(--gris-fondo) para que la tabla reaccione al theme toggle */
+    background-color: var(--gris-fondo);
     border-radius: 20px;
-    padding: 20px; /* Le damos aire interno al contenedor */
+    padding: 20px;
+    /* Le damos aire interno al contenedor */
 }
 
 /* Forzamos el color verde en el encabezado */
@@ -261,12 +311,13 @@ main {
     background-color: var(--verde-unju) !important;
     color: white !important;
     border-color: var(--verde-unju);
-    padding: 15px; /* Encabezados más altos y elegantes */
+    padding: 15px;
+    /* Encabezados más altos y elegantes */
 }
 
 /* Efecto hover más notable */
 .table-hover tbody tr:hover {
-    background-color: rgba(46, 125, 50, 0.1) !important; 
+    background-color: rgba(46, 125, 50, 0.1) !important;
     cursor: default;
 }
 
@@ -275,5 +326,6 @@ main {
     border-collapse: separate;
     border-spacing: 0;
     overflow: hidden;
-    border-radius: 15px; /* Bordes redondeados para la tabla misma */
+    border-radius: 15px;
+    /* Bordes redondeados para la tabla misma */
 }
