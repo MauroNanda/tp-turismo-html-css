@@ -96,6 +96,14 @@ tbody tr:hover td {
 
 /*TABLA RESPONSIVA*/
 
+@media (max-width: 768px) {
+    /* FIX RESPONSIVE: En celulares achicamos los margenes para que la pagina no quede con espacios blancos gigantes */
+    .precios-page {
+        margin: 20px auto !important;
+        padding: 10px !important;
+    }
+}
+
 @media (max-width: 1024px) {
     /* 1. Forzamos al contenedor principal a no salirse */
     .precios-page {
