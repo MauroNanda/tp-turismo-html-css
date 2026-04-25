@@ -160,3 +160,129 @@ El proyecto está preparado para ser publicado directamente desde GitHub Pages, 
 Trabajo Practico Integrador — Programacion y Servicios Web  
 Facultad de Ingenieria — Universidad Nacional de Jujuy (UNJU)  
 2026
+
+---
+
+## Fase 2 — Bootstrap, jQuery y Buenas Prácticas
+
+En la segunda fase del proyecto ampliamos el sitio incorporando frameworks y librerías de desarrollo moderno. El objetivo fue adaptar el trabajo anterior de HTML y CSS puro para que conviva con Bootstrap 5 y jQuery 3, manteniendo la identidad visual ya lograda y sumando interactividad real a cada sección.
+
+### Tecnologías incorporadas en Fase 2
+
+- **Bootstrap 5.3.3** (instalación local en `vendor/bootstrap/`): Grillas responsivas, componentes de navegación, modal, carousel, tooltips, formularios y sistema de utilidades.
+- **jQuery 3.7.1** (CDN): Animaciones, filtros dinámicos, validación de formularios y manipulación del DOM en todas las páginas.
+- **Font Awesome 6.5.0** (CDN): Íconos vectoriales en navbar, botones, cards y footer.
+
+### Instalación local de Bootstrap
+
+En lugar de depender de un CDN externo, descargamos los archivos minificados de Bootstrap y los alojamos dentro del propio proyecto:
+
+```
+vendor/
+└── bootstrap/
+    ├── css/
+    │   └── bootstrap.min.css
+    └── js/
+        └── bootstrap.bundle.min.js
+```
+
+Esto permite que el sitio funcione correctamente en entornos sin conexión a internet y elimina la dependencia de servicios externos en la entrega final.
+
+### Header y Footer unificados (Partials)
+
+Una de las decisiones de arquitectura más importantes de esta fase fue centralizar el header y el footer. Dado que ambos componentes se repetían idénticos en las seis páginas, los extrajimos a archivos HTML independientes:
+
+```
+partials/
+├── header.html
+└── footer.html
+```
+
+Cada página los carga dinámicamente mediante el script `js/layout.js`, que utiliza `fetch()` e `innerHTML` para inyectar el contenido:
+
+```javascript
+// js/layout.js
+async function cargarPartial(selector, url) {
+    const respuesta = await fetch(url);
+    const html = await respuesta.text();
+    document.querySelector(selector).innerHTML = html;
+}
+cargarPartial('#header-placeholder', 'partials/header.html');
+cargarPartial('#footer-placeholder', 'partials/footer.html');
+```
+
+Gracias a esto, cualquier corrección sobre el header o footer se aplica a todo el sitio modificando un único archivo. Esta arquitectura requiere que el sitio se sirva desde un servidor local (Live Server, `npx serve`, etc.) o desde un hosting, ya que el protocolo `file://` bloquea las peticiones `fetch` por razones de seguridad del navegador (política CORS).
+
+### Interactividad jQuery por página
+
+Cada sección del sitio tiene su propio archivo JavaScript que concentra la lógica jQuery correspondiente:
+
+| Página | Archivo | Funcionalidad principal |
+|---|---|---|
+| Home | `js/home.js` | Contador animado con `.animate()`, hero con `fadeIn` y `delay` |
+| Destinos | `js/destinos.js` | Filtros dinámicos con `.hide()` / `fadeIn()`, zoom en cards |
+| Agencias | `js/agencias.js` | Flip cards con `.toggleClass()`, rating interactivo con estrellas |
+| Precios | `js/precios.js` | Hover de filas con `.mouseenter`, tooltips Bootstrap con jQuery |
+| Blog | `js/blog.js` | Filtro por categorías, animación al hacer scroll con `checkReveal()` |
+| Contacto | `js/contacto.js` | Validación en tiempo real, spinner de carga, modal de confirmación |
+
+### Módulo Educativo: Simulación de Phishing
+
+Se implementó un módulo interactivo de concientización sobre seguridad informática, accesible desde un botón flotante en la página de inicio. Al abrirlo, el usuario ve un correo electrónico bancario falso con cinco señales de fraude ocultas. Al hacer clic sobre cada una, jQuery muestra un popover explicando por qué esa parte del correo es sospechosa.
+
+Las cinco trampas del correo simulado son:
+1. **Logo falso**: "Banc0 NacionaI" (caracteres sustituidos para imitar el original).
+2. **Remitente fraudulento**: dominio que imita al oficial pero no es el real.
+3. **Asunto con urgencia extrema**: técnica clásica de manipulación emocional.
+4. **Enlace falso**: botón que aparenta llevar al sitio oficial pero no lo hace.
+5. **Solicitud de datos sensibles**: ningún banco real pide PIN, contraseña ni CVC por correo.
+
+El módulo no almacena ningún dato del usuario ni ejecuta código malicioso; es íntegramente educativo.
+
+### Sprite CSS
+
+Para cumplir con el requisito de la consigna, implementamos una imagen sprite en formato SVG (`images/sprites/social-sprite.svg`) que concentra en un solo archivo los íconos de tres redes sociales y un marcador de ubicación. La técnica de `background-position` en `css/sprites.css` permite mostrar cada ícono recortando una región específica del sprite:
+
+```css
+.social-icon {
+    background-image: url('../images/sprites/social-sprite.svg');
+    background-size: 128px 32px;
+}
+
+.icon-facebook  { background-position: 0 0; }
+.icon-instagram { background-position: -32px 0; }
+.icon-twitter   { background-position: -64px 0; }
+.icon-marker    { background-position: -96px 0; }
+```
+
+El sprite se aplica en los íconos de redes sociales del footer (presente en las seis páginas gracias al sistema de partials) y en el botón "Ver Destinos" de la página de inicio.
+
+### Estructura de archivos — Fase 2
+
+```
+tp-turismo-html-css/
+├── css/
+│   ├── phishing.css       ← Estilos del módulo educativo
+│   └── sprites.css        ← Sistema de sprite CSS
+├── images/
+│   └── sprites/
+│       └── social-sprite.svg  ← Sprite vectorial de íconos
+├── js/
+│   ├── layout.js          ← Carga dinámica de header y footer
+│   ├── home.js
+│   ├── destinos.js
+│   ├── agencias.js
+│   ├── precios.js
+│   ├── blog.js
+│   ├── contacto.js
+│   └── phishing.js        ← Lógica del módulo educativo
+├── partials/
+│   ├── header.html        ← Header unificado
+│   └── footer.html        ← Footer unificado
+└── vendor/
+    └── bootstrap/
+        ├── css/bootstrap.min.css
+        └── js/bootstrap.bundle.min.js
+```
+
+---
