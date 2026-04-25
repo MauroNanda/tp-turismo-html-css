@@ -170,7 +170,7 @@ Archivos:
 - Correcciones generales detectadas en revision de codigo (bugs menores, clases incompletas, etc.)
 
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
