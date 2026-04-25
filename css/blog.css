@@ -214,15 +214,16 @@ main {
 
 /* --- ANIMACIONES --- */
 .reveal {
-    animation: revealFade 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* --- SISTEMA DE FILTRADO (TAGS) --- */
-
-/* Ocultar los inputs de radio originales */
-input[name="filtro-blog"] {
-    display: none;
-}
+/* --- SISTEMA DE FILTRADO (TAGS) CON JQUERY --- */
 
 /* Contenedor de los tags */
 .tags-container {
@@ -231,8 +232,8 @@ input[name="filtro-blog"] {
     margin-top: 10px;
 }
 
-/* Estilo de cada botón (Label) */
-.tags-container label {
+/* Estilo de cada botón */
+.tag-btn {
     padding: 6px 18px;
     border-radius: 50px;
     border: 2px solid var(--verde-unju);
@@ -241,47 +242,15 @@ input[name="filtro-blog"] {
     font-size: 0.85rem;
     font-weight: bold;
     transition: all 0.3s ease;
-    background: var(--color-blanco); /* Se adapta al modo oscuro */
+    background: var(--color-blanco);
 }
 
-.tags-container label:hover {
+.tag-btn:hover, .tag-btn.active {
     background: var(--verde-unju);
     color: white;
 }
 
-#todo:checked ~ #noticias-diario label[for="todo"],
-#noticias:checked ~ #noticias-diario label[for="noticias"],
-#eventos:checked ~ #noticias-diario label[for="eventos"],
-#tips:checked ~ #noticias-diario label[for="tips"] {
-    background: var(--verde-unju);
-    color: white;
-}
 
-#noticias:checked ~ #noticias-diario .grid-diario article:not(.noticias),
-#eventos:checked ~ #noticias-diario .grid-diario article:not(.eventos),
-#tips:checked ~ #noticias-diario .grid-diario article:not(.tips) {
-    display: none;
-}
-
-#noticias:checked ~ #noticias-diario .grid-diario,
-#eventos:checked ~ #noticias-diario .grid-diario,
-#tips:checked ~ #noticias-diario .grid-diario {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#noticias:checked ~ #noticias-diario .nota-principal,
-#eventos:checked ~ #noticias-diario .nota-principal,
-#tips:checked ~ #noticias-diario .nota-principal {
-    border-right: none;
-    padding-right: 0;
-}
-
-@keyframes revealFade {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
 /* RESPONSIVO BLOG*/
 
@@ -322,7 +291,7 @@ input[name="filtro-blog"] {
         -webkit-overflow-scrolling: touch;
     }
 
-    .tags-container label {
+    .tags-container .tag-btn {
         flex-shrink: 0; /* Evita que se aplasten */
     }
 
@@ -369,7 +338,7 @@ input[name="filtro-blog"] {
 }
 
 /* Fix para el modo oscuro en los tags cuando están activos */
-#dark-mode-toggle:checked ~ * .tags-container label {
+#dark-mode-toggle:checked ~ * .tag-btn.active {
     background: var(--color-blanco);
     color: var(--verde-unju);
-}
+}
