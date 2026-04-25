@@ -1,0 +1,135 @@
+/* =============================================
+   MÓDULO EDUCATIVO PHISHING
+   ============================================= */
+
+.email-simulado {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.email-simulado p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Botón Flotante Phishing */
+.btn-flotante-phishing {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #dc3545; /* Rojo peligro/alerta */
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+    font-size: 24px;
+    z-index: 1050;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-flotante-phishing:hover {
+    transform: scale(1.1);
+    background-color: #bb2d3b;
+}
+
+.tooltip-phishing {
+    position: absolute;
+    right: 75px;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tooltip-phishing::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #333;
+}
+
+.btn-flotante-phishing:hover .tooltip-phishing {
+    opacity: 1;
+}
+
+/* Estilos para los elementos interactivos (Trampas) */
+.trampa {
+    cursor: url('../images/index/logo.png'), pointer; /* Un toque diferente o simplemente pointer */
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px dashed transparent;
+    display: inline-block;
+}
+
+/* Animación sutil para invitar a hacer clic */
+@keyframes pulsoSutil {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+.trampa:not(.encontrada):hover {
+    border: 1px dashed rgba(220, 53, 69, 0.5);
+    background-color: rgba(220, 53, 69, 0.05);
+    border-radius: 4px;
+}
+
+/* Estado cuando el usuario encuentra la trampa */
+.trampa.encontrada {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    border: 1px solid #dc3545 !important;
+    border-radius: 4px;
+    padding: 2px 4px;
+    text-decoration: line-through;
+    color: #dc3545 !important;
+    animation: none; /* Detiene el pulso al encontrarla */
+}
+
+/* Para el botón falso, quitamos el line-through que se ve mal */
+span.trampa.btn.encontrada {
+    text-decoration: none;
+    box-shadow: 0 0 0 2px #dc3545;
+}
+
+/* Añadir icono de check al lado de la trampa encontrada */
+.trampa.encontrada::after {
+    content: '\f057'; /* FontAwesome xmark-circle */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #dc3545;
+    margin-left: 6px;
+    font-size: 14px;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+/* Ajustes de popover */
+.popover-header {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+    border-bottom: 1px solid #ffeeba;
+}
+
+.popover-body {
+    font-size: 14px;
+    color: #333;
+}
