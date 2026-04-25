@@ -151,6 +151,25 @@ Archivos:
 - css/blog.css (modificar)
 - js/blog.js (nuevo)
 
+Estado: [x] Completada
+
+---
+
+## Tarea 6.5: Refactoring General — Bootstrap Local + Header/Footer Unificado
+
+Rama: refactor/bootstrap-local-y-layout
+Depende de: Tareas 1-6 completadas y mergeadas
+
+Descripcion:
+- Instalar Bootstrap de forma local (descargar CSS y JS, reemplazar los CDN en todos los HTML)
+- Unificar Header y Footer: crear archivos parciales header.html y footer.html, e incluirlos en cada pagina mediante JavaScript (fetch + innerHTML) o alternativa acordada con el equipo
+
+Archivos:
+- vendor/bootstrap/ (nuevo directorio con los archivos locales de Bootstrap)
+- index.html, destinos.html, agencias.html, precios.html, blog.html, contacto.html (modificar links de CDN y bloques de header/footer)
+- Correcciones generales detectadas en revision de codigo (bugs menores, clases incompletas, etc.)
+
+
 Estado: [ ] Pendiente
 
 ---
@@ -228,6 +247,7 @@ Paralelo tras Tarea 0:
 - Tarea 6 (Blog)
 
 Secuencial:
+- Tarea 6.5 (Refactoring) -> espera Tareas 1-6
 - Tarea 7 (Phishing) -> espera Tarea 1
 - Tarea 8 (Sprite) -> espera Tareas 1-7
 - Tarea 9 (Docs) -> espera todo
