@@ -214,7 +214,13 @@ main {
 
 /* --- ANIMACIONES --- */
 .reveal {
-    animation: revealFade 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* --- SISTEMA DE FILTRADO (TAGS) --- */
@@ -278,10 +284,7 @@ input[name="filtro-blog"] {
     padding-right: 0;
 }
 
-@keyframes revealFade {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+
 
 /* RESPONSIVO BLOG*/
 
@@ -372,10 +375,4 @@ input[name="filtro-blog"] {
 #dark-mode-toggle:checked ~ * .tags-container label {
     background: var(--color-blanco);
     color: var(--verde-unju);
-}
-.reveal {
-    transition: all 0.8s ease-in-out;
-}
-.comentario-item.reveal {
-    opacity: 0;
-}
+}
