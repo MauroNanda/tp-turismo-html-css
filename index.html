@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sprites.css">
+    <link rel="stylesheet" href="css/phishing.css">
 </head>
 
 <body id="home-page">
@@ -26,7 +27,9 @@
     <main>
         <!-- Hero con Video -->
         <section class="hero-video">
-            <iframe class="video-background" src="https://www.youtube.com/embed/LZ6R41HlrqA?autoplay=1&mute=1&loop=1&playlist=LZ6R41HlrqA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1" allow="autoplay; encrypted-media" frameborder="0" aria-hidden="true" tabindex="-1"></iframe>
+            <iframe class="video-background"
+                src="https://www.youtube.com/embed/LZ6R41HlrqA?autoplay=1&mute=1&loop=1&playlist=LZ6R41HlrqA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1"
+                allow="autoplay; encrypted-media" frameborder="0" aria-hidden="true" tabindex="-1"></iframe>
 
             <div class="hero-overlay"></div>
 
@@ -97,13 +100,15 @@
                     <div class="carousel-item active">
                         <article class="comentario">
                             <div class="estrellas">⭐⭐⭐⭐⭐</div>
-                            <p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p><cite>— Siomara Venicio</cite>
+                            <p>"Fue el mejor viaje de mi vida, todo muy bien organizado."</p><cite>— Siomara
+                                Venicio</cite>
                         </article>
                     </div>
                     <div class="carousel-item">
                         <article class="comentario">
                             <div class="estrellas">⭐⭐⭐⭐⭐</div>
-                            <p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p><cite>— Gabriel Calisaya</cite>
+                            <p>"Increíbles los guías, nos llevaron a lugares que no estaban en el mapa."</p><cite>—
+                                Gabriel Calisaya</cite>
                         </article>
                     </div>
                     <div class="carousel-item">
@@ -115,22 +120,26 @@
                     <div class="carousel-item">
                         <article class="comentario">
                             <div class="estrellas">⭐⭐⭐⭐</div>
-                            <p>"La organización fue impecable. Pudimos resolver todo genial para mis amigos. Un 10/10."</p>
+                            <p>"La organización fue impecable. Pudimos resolver todo genial para mis amigos. Un 10/10."
+                            </p>
                             <cite>— Irene Quiroga</cite>
                         </article>
                     </div>
                     <div class="carousel-item">
                         <article class="comentario">
                             <div class="estrellas">⭐⭐⭐⭐⭐</div>
-                            <p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p><cite>— Mauro Nanda</cite>
+                            <p>"Con mi pareja fuimos para carnaval, una locura lo lindo que se experimentó todo."</p>
+                            <cite>— Mauro Nanda</cite>
                         </article>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
                 </button>
@@ -154,6 +163,107 @@
                 </div>
             </article>
         </section>
+
+        <!-- Botón Flotante Phishing -->
+        <button class="btn-flotante-phishing" data-bs-toggle="modal" data-bs-target="#modalPhishing" aria-label="Abrir Simulación de Phishing">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span class="tooltip-phishing">Simulación Phishing</span>
+        </button>
+
+        <!-- Modal Phishing -->
+        <div class="modal fade" id="modalPhishing" tabindex="-1" aria-labelledby="modalPhishingLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title" id="modalPhishingLabel">
+                            <i class="fa-solid fa-triangle-exclamation me-2"></i> ¡Alerta de Seguridad! Simulación de
+                            Phishing
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-muted mb-4">
+                            Lee el siguiente correo electrónico simulado e identifica las <strong>5 señales de fraude
+                                (phishing)</strong> haciendo clic en ellas.
+                        </p>
+
+                        <div class="email-simulado border rounded position-relative shadow-sm overflow-hidden">
+                            <!-- Falso Encabezado de Cliente de Correo -->
+                            <div class="bg-light p-2 border-bottom d-flex align-items-center">
+                                <div class="d-flex gap-1 me-3">
+                                    <span class="rounded-circle bg-danger d-inline-block" style="width: 12px; height: 12px;"></span>
+                                    <span class="rounded-circle bg-warning d-inline-block" style="width: 12px; height: 12px;"></span>
+                                    <span class="rounded-circle bg-success d-inline-block" style="width: 12px; height: 12px;"></span>
+                                </div>
+                                <span class="text-muted small fw-bold">Correo Entrante - Bandeja Principal</span>
+                            </div>
+
+                            <div class="p-4">
+                                <!-- TRAMPA 5: Logo falso/pixelado -->
+                                <div class="text-center mb-3 trampa"
+                                    data-explicacion="El logotipo es sospechoso o de baja calidad, a menudo robado o modificado.">
+                                    <h3 class="text-primary fw-bold fst-italic mb-0" style="letter-spacing: 2px;">Banc0 NacionaI
+                                    </h3>
+                                    <small class="text-muted">La banca de tu país</small>
+                                </div>
+
+                            <!-- TRAMPA 1: Remitente falso -->
+                            <div class="email-header mb-4 pb-2 border-bottom">
+                                <div class="trampa"
+                                    data-explicacion="El dominio del correo (lo que sigue después del @) no es el oficial. Los estafadores usan dominios similares para engañar.">
+                                    <strong>De:</strong> alertas@banco-nacionaI-seguridad.com.ar
+                                </div>
+                                <!-- TRAMPA 2: Asunto urgente -->
+                                <div class="trampa mt-1 text-danger fw-bold"
+                                    data-explicacion="Generan sentido de urgencia o miedo extremo ('bloqueo', 'urgente') para que actúes rápido sin pensar.">
+                                    <strong>Asunto:</strong> AVISO URGENTE: Bloqueo preventivo de su Home Banking
+                                </div>
+                                <div class="text-muted mt-1 small">
+                                    <strong>Para:</strong> usuario@email.com
+                                </div>
+                            </div>
+
+                            <div class="email-body">
+                                <p>Estimado cliente,</p>
+                                <p>Hemos detectado un intento de inicio de sesión inusual en su cuenta bancaria. Por motivos de seguridad y para proteger sus fondos, su acceso al Home Banking ha sido bloqueado temporalmente.</p>
+
+                                <!-- TRAMPA 3: Link falso -->
+                                <div class="text-center my-4">
+                                    <span class="trampa btn btn-primary px-4 py-2"
+                                        data-explicacion="El botón te dirige a una página falsa. Si pasas el mouse por encima (sin hacer clic), verás que la URL real no coincide con la oficial del banco.">
+                                        Desbloquear mi cuenta ahora
+                                    </span>
+                                </div>
+
+                                <p>Para restaurar el acceso, por favor valide su identidad ingresando al enlace anterior o respondiendo a este correo con la siguiente información:</p>
+                                <!-- TRAMPA 4: Petición de datos sensibles -->
+                                <ul class="trampa bg-light p-3 rounded"
+                                    data-explicacion="Nunca un banco te pedirá contraseñas, PINs del cajero, Token o todos los números de tu tarjeta por correo electrónico.">
+                                    <li>Su número de DNI completo</li>
+                                    <li>Clave de 4 dígitos (PIN) del cajero automático</li>
+                                    <li>Los 16 dígitos de su tarjeta de débito y código de seguridad (CVC)</li>
+                                </ul>
+
+                                <p>Atentamente,<br>Departamento de Prevención de Fraudes.</p>
+                            </div> <!-- fin email-body -->
+                        </div> <!-- fin p-4 -->
+                    </div> <!-- fin email-simulado -->
+                </div> <!-- fin modal-body -->
+                <div class="modal-footer d-flex justify-content-between align-items-center">
+                        <div class="fw-bold text-primary">
+                            <span id="contador-phishing">0</span>/5 señales encontradas
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-outline-secondary" id="btn-revelar-trampas">Revelar
+                                Todo</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <div id="footer-placeholder"></div>
 
@@ -164,6 +274,8 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Home animations JS -->
     <script src="js/home.js"></script>
+    <!-- Phishing Educativo JS -->
+    <script src="js/phishing.js"></script>
 </body>
 
 </html>

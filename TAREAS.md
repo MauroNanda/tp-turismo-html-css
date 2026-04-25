@@ -177,21 +177,68 @@ Estado: [x] Completada
 ## Tarea 7: Modulo Educativo — Simulacion de Phishing
 
 Rama: feature/phishing-educativo
-Depende de: Tarea 0 + Tarea 1 (esperar merge de Tarea 1 porque comparten index.html)
-Puede iniciarse en paralelo: No, esperar Tarea 1
+Depende de: Tarea 0 + Tarea 1 mergeadas en main
 
 Descripcion:
-- Boton "Simulacion de Phishing" en el Home
-- Modal Bootstrap con advertencia educativa, ejemplos de fraude y senales
-- Interaccion jQuery: usuario identifica elementos sospechosos, feedback visual
-- NO se permite robo de datos reales
+Implementar un modulo interactivo en index.html donde el usuario lee un email
+de phishing simulado y tiene que identificar las senales de fraude haciendo clic.
+Cada clic revela un tooltip con la explicacion. Al final puede ver el puntaje.
+
+--- PLAN PASO A PASO ---
+
+Paso 1 — HTML en index.html
+- Agregar un boton flotante o en la seccion hero: "Simulacion de Phishing"
+  Usar clase Bootstrap: btn btn-danger, con icono fa-shield-halved
+- Agregar el modal Bootstrap con id="modalPhishing"
+  Estructura del modal:
+    - Header: titulo con advertencia (fondo rojo/naranja)
+    - Body: un email falso simulado con 5 trampas ocultas marcadas con clase .trampa
+    - Footer: contador "X/5 senales encontradas" + boton "Revelar todo"
+
+Contenido del email falso (trampa visual):
+  - Remitente falso: soporte@turismo-jujuy.com.ar.phish.net  <-- trampa 1
+  - Asunto con urgencia: "URGENTE: Tu cuenta sera suspendida en 24hs"  <-- trampa 2
+  - Link malicioso con texto correcto pero URL falsa  <-- trampa 3
+  - Solicitud de datos personales (contraseña / tarjeta)  <-- trampa 4
+  - Logo con errores o pixelado  <-- trampa 5
+
+Paso 2 — js/phishing.js (nuevo)
+- Al abrir el modal: resetear el contador y ocultar las explicaciones
+- Cada .trampa tiene data-explicacion="..."
+- Al hacer clic en .trampa:
+    * toggleClass('encontrada') para marcarla visualmente (borde rojo + icono check)
+    * Mostrar un tooltip/popover Bootstrap con la explicacion del peligro
+    * Actualizar contador: #contador-phishing
+    * Si se encontraron las 5: mostrar mensaje de felicitacion con jQuery .fadeIn()
+- Boton "Revelar todo": hace .addClass('encontrada') a todas las .trampa que faltan
+  y actualiza el contador a 5/5
+
+Paso 3 — css/phishing.css (nuevo)
+- Estilo para el email simulado (fuente tipo correo, borde, padding)
+- .trampa: cursor pointer, subrayado punteado para indicar que es interactivo
+- .trampa.encontrada: fondo rojo claro, borde rojo, tachado segun el caso
+- Animacion de pulso sutil en las trampas no encontradas para guiar al usuario
+- Responsive: el modal debe verse bien en mobile (modal-dialog-scrollable)
+
+Paso 4 — Verificacion
+- El boton abre el modal correctamente
+- Las 5 trampas se pueden clickear y muestran feedback visual
+- El contador sube de 0/5 a 5/5
+- "Revelar todo" completa las que faltan
+- No se almacena ningun dato real del usuario
+- Se ve bien en mobile
+
+Paso 5 — Commit
+  git add index.html js/phishing.js css/phishing.css
+  git commit -m "feat(phishing): agrega modulo educativo de simulacion de phishing con jquery"
+  git push origin feature/phishing-educativo
 
 Archivos:
-- index.html (modificar, tomar de main despues de Tarea 1)
+- index.html (agregar boton + modal)
 - js/phishing.js (nuevo)
-- css/phishing.css (nuevo, opcional)
+- css/phishing.css (nuevo)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
