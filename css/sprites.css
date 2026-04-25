@@ -9,14 +9,19 @@
     display: inline-block;
     width: 32px;
     height: 32px;
-    background-image: url('../images/sprites/social-sprite.png');
+    background-image: url('../images/sprites/social-sprite.svg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 128px 32px; /* 4 iconos de 32px */
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-/* Posiciones individuales — Completar en Tarea 8 con la imagen real */
-/*
+.social-icon:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+/* Posiciones individuales */
 .icon-facebook  { background-position: 0 0; }
 .icon-instagram { background-position: -32px 0; }
 .icon-twitter   { background-position: -64px 0; }
-*/
+.icon-marker    { background-position: -96px 0; }

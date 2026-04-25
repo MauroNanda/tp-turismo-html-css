@@ -242,23 +242,63 @@ Estado: [x] Completada
 
 ---
 
-## Tarea 8: Sprite CSS + Iconos en footers
+## Tarea 8: Sprite CSS + Iconos
 
 Rama: feature/sprite-iconos
-Depende de: Tarea 0 + Tareas 1-7 (esperar que todas mergeen para evitar conflictos en footers)
-Puede iniciarse en paralelo: No, hacer al final
+Depende de: Tarea 0 + Tareas 1-7 mergeadas
 
 Descripcion:
-- Crear imagen sprite (social-sprite.png) con iconos de Facebook, Instagram, Twitter
-- Completar css/sprites.css con background-position para cada icono
-- Reemplazar iconos de redes sociales en los 6 footers por el sprite
+Crear una imagen sprite con los iconos de redes sociales y aplicarla
+en el footer unificado mediante background-position en sprites.css.
+La consigna pide que el sprite se use en: redes sociales, botones e iconos personalizados.
+
+--- PLAN PASO A PASO ---
+
+Paso 1 — Crear la imagen sprite (social-sprite.svg)
+- Generar una imagen horizontal (96x32px) que contenga 3 iconos de 32x32px cada uno:
+    * 0px   → Facebook (cuadrado azul)
+    * 32px  → Instagram (cuadrado degradado naranja/rosado)
+    * 64px  → Twitter/X (cuadrado negro)
+- Guardar en: images/sprites/social-sprite.svg
+- La imagen puede generarse con IA o con cualquier editor grafico
+
+Paso 2 — Completar css/sprites.css
+- Desbloquear las clases comentadas y ajustar las posiciones:
+    .icon-facebook  { background-position: 0 0; }
+    .icon-instagram { background-position: -32px 0; }
+    .icon-twitter   { background-position: -64px 0; }
+- Agregar estados :hover con un filtro sutil para indicar interactividad
+- Verificar que background-size coincide con el tamano de la imagen generada
+
+Paso 3 — Aplicar el sprite en partials/footer.html
+- Reemplazar los <i class="fa-brands..."> de Facebook e Instagram por:
+    <a href="#" class="social-icon icon-facebook" aria-label="Facebook"></a>
+    <a href="#" class="social-icon icon-instagram" aria-label="Instagram"></a>
+    <a href="#" class="social-icon icon-twitter" aria-label="Twitter"></a>
+- Como el footer es un partial unificado, el cambio se aplica a las 6 paginas solas
+
+Paso 4 — Aplicar el sprite en al menos un botón (consigna pide: botones e iconos)
+- Opcion: agregar un icono sprite al boton de Contacto de la seccion del Home
+  o crear una clase .icon-marker para un icono de ubicacion en el footer
+- Esto demuestra que el sprite no solo se usa en redes, sino tambien en botones
+
+Paso 5 — Verificacion
+- Los iconos se ven correctamente en cada pagina (via footer unificado)
+- No hay llamadas a Font Awesome para los iconos de redes sociales del footer
+- El sprite se ve bien en mobile (no pixelado)
+- Verificar con DevTools: Network > Images, que solo carga social-sprite.svg
+
+Paso 6 — Commit
+    git add images/sprites/social-sprite.svg css/sprites.css partials/footer.html index.html
+    git commit -m "feat(sprites): implementa sprite CSS para iconos de redes sociales y boton"
+    git push origin feature/sprite-iconos
 
 Archivos:
-- images/sprites/social-sprite.png (nuevo)
+- images/sprites/social-sprite.svg (nuevo)
 - css/sprites.css (completar)
-- index.html, destinos.html, agencias.html, precios.html, blog.html, contacto.html (modificar footers)
+- partials/footer.html (reemplazar fa-brands por sprite)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
