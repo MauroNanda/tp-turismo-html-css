@@ -22,99 +22,7 @@
     <!-- Toggle Dark Mode CSS-Only -->
     <input type="checkbox" id="dark-mode-toggle" class="sr-only">
 
-    <header class="main-header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a href="index.html" class="navbar-brand logo">
-                    <svg viewBox="0 0 24 24" class="logo-svg">
-                        <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.8 13.8 7.3 10.5 7.3 10.5L2 18h20L14 6z" />
-                    </svg>
-                    Turismo Jujuy
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Abrir menú">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarMain">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="destinos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-mountain-sun"></i> Destinos</a>
-                            <div class="dropdown-menu mega-menu">
-                                <div class="mega-column">
-                                    <h4>Regiones</h4>
-                                    <a class="dropdown-item" href="destinos.html#quebrada">Quebrada de Humahuaca</a>
-                                    <a class="dropdown-item" href="destinos.html#puna">La Puna</a>
-                                    <a class="dropdown-item" href="destinos.html#yungas">Selva de las Yungas</a>
-                                    <a class="dropdown-item" href="destinos.html#valles">Valles Templados</a>
-                                </div>
-                                <div class="mega-column">
-                                    <h4>Experiencias</h4>
-                                    <a class="dropdown-item" href="#">Aventura Extrema</a>
-                                    <a class="dropdown-item" href="#">Cultura y Tradición</a>
-                                    <a class="dropdown-item" href="#">Gastronomía Local</a>
-                                </div>
-                                <div class="mega-column mega-img">
-                                    <a href="destinos.html" aria-label="Ver todos los destinos">
-                                        <img src="images/index/purmamarca.webp" alt="Destino destacado: Purmamarca">
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="agencias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-building"></i> Agencias</a>
-                            <div class="dropdown-menu mega-menu mega-menu-small">
-                                <div class="mega-column">
-                                    <h4>Por Tipo</h4>
-                                    <a class="dropdown-item" href="agencias.html">Aventura</a>
-                                    <a class="dropdown-item" href="agencias.html">Cultural</a>
-                                    <a class="dropdown-item" href="agencias.html">Gastronómico</a>
-                                </div>
-                                <div class="mega-column">
-                                    <h4>Servicios</h4>
-                                    <a class="dropdown-item" href="agencias.html">Excursiones</a>
-                                    <a class="dropdown-item" href="agencias.html">Viajes Privados</a>
-                                    <a class="dropdown-item" href="agencias.html">Paquetes</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="precios.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-tags"></i> Precios</a>
-                            <div class="dropdown-menu mega-menu mega-menu-small">
-                                <div class="mega-column">
-                                    <h4>Regiones</h4>
-                                    <a class="dropdown-item" href="precios.html">Quebrada</a>
-                                    <a class="dropdown-item" href="precios.html">Puna</a>
-                                    <a class="dropdown-item" href="precios.html">Yungas</a>
-                                </div>
-                                <div class="mega-column">
-                                    <h4>Planes</h4>
-                                    <a class="dropdown-item" href="precios.html">Individual</a>
-                                    <a class="dropdown-item" href="precios.html">Grupal</a>
-                                    <a class="dropdown-item" href="precios.html">Premium</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
-                        </li>
-                    </ul>
-                    <div class="nav-actions ms-3">
-                        <label for="dark-mode-toggle" class="theme-toggle" aria-label="Cambiar tema oscuro/claro">
-                            <span class="icon-sun">☀️</span>
-                            <span class="icon-moon">🌙</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
     <main>
         <!-- Hero con Video -->
         <section class="hero-video">
@@ -247,67 +155,10 @@
             </article>
         </section>
     </main>
-    <footer class="footer-global">
-        <div class="footer-container">
-            <!-- Columna 1: Info + Newsletter -->
-            <div class="footer-info">
-                <h3 style="display:flex; align-items:center; gap:8px;">
-                    <svg viewBox="0 0 24 24" width="24" height="24" style="fill: var(--verde-unju);">
-                        <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.8 13.8 7.3 10.5 7.3 10.5L2 18h20L14 6z" />
-                    </svg>
-                    Turismo Jujuy
-                </h3>
-                <p>Tu puerta de entrada a los paisajes más increíbles del norte argentino. Explorá la Quebrada, la Puna
-                    y los Valles con guías expertos y precios transparentes.</p>
-                <form class="newsletter-form footer-compact-newsletter" action="#" method="post">
-                    <input class="footer-compact-input" type="email" placeholder="Tu email" required
-                        aria-label="Email para newsletter">
-                    <button class="footer-compact-btn" type="submit">Suscribirme</button>
-                </form>
-            </div>
-
-            <!-- Columna 2: Navegación -->
-            <nav class="footer-nav" aria-label="Navegación del footer">
-                <h3>Explorar</h3>
-                <ul class="footer-compact-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="destinos.html">Destinos</a></li>
-                    <li><a href="agencias.html">Agencias</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-
-            <!-- Columna 3: Redes + Mapa -->
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f fa-lg"></i>
-                    </a>
-                    <a href="#" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram fa-lg"></i>
-                    </a>
-                    <a href="#" aria-label="Twitter">
-                        <i class="fa-brands fa-x-twitter fa-lg"></i>
-                    </a>
-                </div>
-                <div class="mapa-google">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.1952548198674!2d-65.29779028554265!3d-24.185757084490204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b5218e3e73c5b%3A0x5d68aa09f54072b!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy!5e0!3m2!1ses!2sar!4v1617812345678!5m2!1ses!2sar"
-                        width="280" height="120" style="border:0;" allowfullscreen="" loading="lazy"
-                        title="Ubicación Turismo Jujuy"></iframe>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <p>© 2026 <a href="index.html">Turismo Jujuy</a>. Todos los derechos reservados.</p>
-            <p>Facultad de Ingeniería — UNJU</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- jQuery -->
+    <script src="js/layout.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
