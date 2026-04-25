@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    // 1. Filtros de Categorías
+    // 1. Filtros de Categorías (Hero Section)
     $(".filter-btn").click(function(){
         var value = $(this).attr('data-filter');
         if(value == "all") {
@@ -8,6 +8,23 @@ $(document).ready(function(){
         } else {
             $(".filter").not('.'+value).hide('1000');
             $('.filter').filter('.'+value).show('1000');
+        }
+    });
+
+    // 1b. Filtros del Diario (Tags: Noticias, Eventos, Tips)
+    $(".tag-btn").click(function(){
+        // Cambiar estilos de botón activo
+        $(".tag-btn").removeClass("active");
+        $(this).addClass("active");
+        
+        var value = $(this).attr('data-filter');
+        var $notas = $('.nota-principal, .nota-item'); // Seleccionar todos los artículos a filtrar
+
+        if(value == "all") {
+            $notas.show(500);
+        } else {
+            $notas.not('.'+value).hide(500);
+            $notas.filter('.'+value).show(500);
         }
     });
 
