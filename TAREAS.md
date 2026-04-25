@@ -317,7 +317,7 @@ Descripcion:
 Archivos:
 - README.md (modificar)
 
-Estado: [ ] Pendiente
+Estado: [x] Completada
 
 ---
 
