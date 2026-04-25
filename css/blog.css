@@ -373,3 +373,9 @@ input[name="filtro-blog"] {
     background: var(--color-blanco);
     color: var(--verde-unju);
 }
+.reveal {
+    transition: all 0.8s ease-in-out;
+}
+.comentario-item.reveal {
+    opacity: 0;
+}
